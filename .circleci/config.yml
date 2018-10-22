@@ -25,11 +25,18 @@ jobs:
       # - image: circleci/postgres:9.4
 
     steps:
+      - restore_cache:
+          keys:
+            - bundle-install
       - checkout
 
       - run:
           name: install dependencies
           command: bundle install
+
+      - save_cache:
+          key: bundle-install
+          paths: ~/.bundle
 
       # run tests!
       - run:
