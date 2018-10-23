@@ -1,24 +1,44 @@
-# README
+##Trelora 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Listing Consultation Tool for client home visits. 
 
-* Ruby version
+##Getting Started 
 
-* System dependencies
+#Prerequisites
+ This project assumes you have installed: 
+ *Ruby
+ *Rails
+ *Faraday
+ *Figaro
 
-* Configuration
 
-* Database creation
+#Installing
 
-* Database initialization
+1. Clone down the repo:
+   `git clone git@github.com:MacInnes/Trelora.git`
+2. Run: 
+  `bundle install`
+  `bundle update`
+  
+3. Setup the database: 
+   `rake db:setup`
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+##Running the tests
+To run the full testing suite, run `rspec` from the command line. 
 
-* ...
+##Heroku Link
+
+
+##Conntributors
+(https://github.com/MacInnes "Andrew Mockett")
+
+(https://github.com/TCraig7 "Tara Craig")
+
+(https://github.com/tmaria17 "Maria Torres")
+
+(https://github.com/dmeskis "Dylan Meskis")
