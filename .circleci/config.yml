@@ -32,11 +32,11 @@ jobs:
 
       - run:
           name: install dependencies
-          command: bundle install
+          command: bundle install --path vendor/bundle
 
       - save_cache:
           key: bundle-install
-          paths: ~/.bundle
+          paths: vendor/bundle
 
       # run tests!
       - run:
