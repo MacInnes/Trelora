@@ -26,10 +26,18 @@ jobs:
 
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - bundle-install-{{ checksum "Gemfile.lock" }}
+            - bundle-install-
 
       - run:
           name: install dependencies
-          command: bundle install
+          command: bundle install --path vendor/bundle
+
+      - save_cache:
+          key: bundle-install-{{ checksum "Gemfile.lock" }}
+          paths: vendor/bundle
 
       # run tests!
       - run:
