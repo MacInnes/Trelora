@@ -2,9 +2,8 @@
 
 Listing Consultation Tool for client home visits. 
 
-##Getting Started 
 
-#Prerequisites
+# Prerequisites
  This project assumes you have installed: 
  * Ruby
  * Rails
@@ -17,16 +16,16 @@ Listing Consultation Tool for client home visits.
 
 1. Clone down the repo:
 
-   `git clone git@github.com:MacInnes/Trelora.git`
+`git clone git@github.com:MacInnes/Trelora.git`
 2. Run: 
 
-  `bundle install`
+`bundle install`
   
-  `bundle update`
+`bundle update`
   
 3. Setup the database: 
 
-   `rake db:setup`
+ `rake db:setup`
 
 
 
