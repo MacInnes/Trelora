@@ -25,11 +25,11 @@ jobs:
       # - image: circleci/postgres:9.4
 
     steps:
+      - checkout
       - restore_cache:
           keys:
             - bundle-install-{{ checksum "Gemfile.lock" }}
             - bundle-install-
-      - checkout
 
       - run:
           name: install dependencies
