@@ -1,18 +1,16 @@
 ##Trelora 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 Listing Consultation Tool for client home visits. 
 
 ##Getting Started 
 
 #Prerequisites
  This project assumes you have installed: 
- *Ruby
- *Rails
- *Faraday
- *Figaro
+ * Ruby
+ * Rails
+ * Faraday
+ * Figaro
+ 
 
 
 #Installing
@@ -35,10 +33,10 @@ To run the full testing suite, run `rspec` from the command line.
 
 
 ##Conntributors
-(https://github.com/MacInnes "Andrew Mockett")
+[Andrew Mockett ](https://github.com/MacInnes)
 
-(https://github.com/TCraig7 "Tara Craig")
+[Tara Craig](https://github.com/TCraig7)
 
-(https://github.com/tmaria17 "Maria Torres")
+[Maria Torres](https://github.com/tmaria17)
 
-(https://github.com/dmeskis "Dylan Meskis")
+[Dylan Meskis](https://github.com/dmeskis)
