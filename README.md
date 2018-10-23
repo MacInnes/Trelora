@@ -1,4 +1,4 @@
-## Trelora 
+# Trelora 
 
 Listing Consultation Tool for client home visits. 
 
@@ -13,7 +13,7 @@ Listing Consultation Tool for client home visits.
  
 
 
-# Installing
+## Installing
 
 1. Clone down the repo:
    `git clone git@github.com:MacInnes/Trelora.git`
