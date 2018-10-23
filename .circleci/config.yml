@@ -29,12 +29,12 @@ jobs:
           keys:
             - bundle-install-{{ checksum "Gemfile.lock" }}
             - bundle-install-
-      #otherwise this runs bundle install and saves it to a specific file (vendor/bundle)
+      #runs using if cache exists, this runs bundle install and saves it to a specific file (vendor/bundle)
       - run:
           name: install dependencies
           command: bundle install --path vendor/bundle
 
-      #this saves the cache if the run command above was run
+      #this saves the cache
       - save_cache:
           key: bundle-install-{{ checksum "Gemfile.lock" }}
           paths: vendor/bundle
