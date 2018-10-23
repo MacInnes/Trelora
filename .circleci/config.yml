@@ -47,7 +47,7 @@ jobs:
 
       - run:
           name: lint
-          command: "gem install rubocop && rubocop"
+          command: "gem install rubocop && rubocop --auto-gen-config"
 
 workflows:
   version: 2
