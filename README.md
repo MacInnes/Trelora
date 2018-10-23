@@ -17,6 +17,7 @@ Listing Consultation Tool for client home visits.
 1. Clone down the repo:
 
 `git clone git@github.com:MacInnes/Trelora.git`
+
 2. Run: 
 
 `bundle install`
