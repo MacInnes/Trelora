@@ -22,6 +22,7 @@ jobs:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
 
+
     steps:
       - checkout
       # this restores cache if it exists in the same state
@@ -43,6 +44,10 @@ jobs:
       - run:
           name: run tests
           command: rspec
+
+      - run:
+          name: lint
+          command: "gem install rubocop && rubocop --fail-level error"
 
 workflows:
   version: 2
