@@ -70,6 +70,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    cowsay (0.3.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
@@ -242,6 +243,7 @@ DEPENDENCIES
   capybara
   capybara-email
   coffee-rails (~> 4.2)
+  cowsay
   database_cleaner
   factory_bot_rails
   faker
@@ -268,4 +270,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.3
+   1.16.6
