@@ -36,7 +36,7 @@ To run the full testing suite, run `rspec` from the command line.
 ## Heroku Link
 
 
-## Conntributors
+## Contributors
 
 [Andrew Mockett ](https://github.com/MacInnes)
 
