@@ -16,6 +16,20 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" style="background-color: #A3C55E;" href="/address">Find</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Prepare</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Collect</a>
+        </li>
+      </ul>
+    <% end %>
+
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg.html_safe, class: "#{name} alert alert-primary" %>
     <% end %>
