@@ -25,14 +25,12 @@ require 'rspec/rails'
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 
-# TODO: the following lines were commented out since we aren't using a DB - uncomment if necessary (tho it will require circleci config)
-
-# begin
-#   ActiveRecord::Migration.maintain_test_schema!
-# rescue ActiveRecord::PendingMigrationError => e
-#   puts e.to_s.strip
-#   exit 1
-# end
+begin
+  ActiveRecord::Migration.maintain_test_schema!
+rescue ActiveRecord::PendingMigrationError => e
+  puts e.to_s.strip
+  exit 1
+end
 
 
 RSpec.configure do |config|
@@ -75,12 +73,12 @@ end
 require 'simplecov'
 SimpleCov.start
 
-# DatabaseCleaner.strategy = :truncation
-# RSpec.configure do |config|
-#   config.before(:each) do #cleans at beginning
-#     DatabaseCleaner.clean
-#   end
-#   config.after(:each) do #cleans after each test
-#     DatabaseCleaner.clean
-#    end
-# end
+DatabaseCleaner.strategy = :truncation
+RSpec.configure do |config|
+  config.before(:each) do #cleans at beginning
+    DatabaseCleaner.clean
+  end
+  config.after(:each) do #cleans after each test
+    DatabaseCleaner.clean
+   end
+end
