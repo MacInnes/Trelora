@@ -25,6 +25,9 @@ jobs:
 
     steps:
       - checkout
+      - run:
+        name: database setup
+        command: rake db:{drop,create,migrate}
       # this restores cache if it exists in the same state
       - restore_cache:
           keys:
