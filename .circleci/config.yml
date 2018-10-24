@@ -42,8 +42,9 @@ jobs:
 
       # this sets up the db with current migrations
       - run:
-          name: database setup
-          command: yarn install && rake db:{drop,create,migrate}
+          name: Database Setup
+          command: |
+            bundle exec rake db:{create,migrate}
       # this runs the tests!
       - run:
           name: run tests
