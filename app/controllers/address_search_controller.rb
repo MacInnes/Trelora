@@ -5,7 +5,7 @@ class AddressSearchController < ApplicationController
   end
 
   def show
-
+    search = AddressSearch.new
   end
 
 end

@@ -2,12 +2,19 @@ require 'rails_helper'
 
 feature 'user can find an address' do
   scenario 'user visits pricing location address screen and searches for an address' do
-
+    User.create(name: "Dylan", email: "email", HTTP_AUTH_TOKEN: "this_is_a_very_simple_auth_token_string")
     visit '/find'
     fill_in :address, with: "1860_south_marion_street-Denver-CO-80210"
     click_on "Find Location"
     expect(current_path).to eq(address_path)
   end
+  # scenario 'user visits pricing location address screen and searches for an address' do
+  #
+  #   visit '/find'
+  #   fill_in :address, with: "1860_south_marion_street-Denver-CO-80210"
+  #   click_on "Find Location"
+  #   expect(current_path).to eq(address_path)
+  # end
 end
 
 # As an authenticated user,
