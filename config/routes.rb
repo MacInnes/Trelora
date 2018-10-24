@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   get "/find", to: 'address_search#new'
   get "/address", to: 'address_search#show'
+
   resources :users, only: [:create]
 end
