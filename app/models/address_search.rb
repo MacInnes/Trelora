@@ -1,4 +1,4 @@
-class AddressSearch
+class AddressSearch 
   #def initialize(filter = {})
   #   @email = filter[:email]
   #   @password = filter[:password]
