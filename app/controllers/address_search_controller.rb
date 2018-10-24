@@ -6,7 +6,6 @@ class AddressSearchController < ApplicationController
 
   def show
     search = AddressSearch.new
-    session[:id] = 1
     @address_facade = AddressFacade.new(params[:address], current_user.HTTP_AUTH_TOKEN)
   end
 
