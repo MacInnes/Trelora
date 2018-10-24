@@ -75,12 +75,12 @@ end
 require 'simplecov'
 SimpleCov.start
 
-DatabaseCleaner.strategy = :truncation
-RSpec.configure do |config|
-  config.before(:each) do #cleans at beginning
-    DatabaseCleaner.clean
-  end
-  config.after(:each) do #cleans after each test
-    DatabaseCleaner.clean
-   end
-end
+# DatabaseCleaner.strategy = :truncation
+# RSpec.configure do |config|
+#   config.before(:each) do #cleans at beginning
+#     DatabaseCleaner.clean
+#   end
+#   config.after(:each) do #cleans after each test
+#     DatabaseCleaner.clean
+#    end
+# end
