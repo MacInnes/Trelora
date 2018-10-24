@@ -14,9 +14,5 @@ class MemberSearch
   def service
     TreloraService.new
   end
-
-  def format_member(member_data)
-    Member.new(member_data)
-  end
-
+  
 end
