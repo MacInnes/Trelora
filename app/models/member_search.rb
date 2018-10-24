@@ -1,4 +1,8 @@
 class MemberSearch
+  #def initialize(filter = {})
+  #   @email = filter[:email]
+  #   @password = filter[:password]
+  # end
 
   def find_member(email, password)
     member_data = service.find_member(email, password)
