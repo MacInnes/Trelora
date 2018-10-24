@@ -1,0 +1,6 @@
+<%= form_tag "/address", method: :post do %>
+  <%= label_tag "Pricing Location Address" %>
+  <%= text_field_tag :address %>
+
+  <%= submit_tag "Find Location" %>
+<% end %>

@@ -4,4 +4,7 @@ class AddressSearchController < ApplicationController
 
   end
 
+  def show
+  end
+
 end
