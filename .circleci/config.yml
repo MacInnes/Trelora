@@ -21,6 +21,16 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
+         environment:
+           - RAILS_ENV: test
+           - PGHOST: 127.0.0.1
+           - PGUSER: ubuntu
+
+       - image: circleci/postgres:10.4
+         environment:
+         - POSTGRES_USER: ubuntu
+         - POSTGRES_DB: Trelora_test
+         - POSTGRES_PASSWORD: ""
 
     steps:
       - checkout
@@ -38,6 +48,10 @@ jobs:
       - save_cache:
           key: bundle-install-{{ checksum "Gemfile.lock" }}
           paths: vendor/bundle
+
+      - run:
+          name: create and migrate db
+          command: bundle exec rake db:{create,migrate}
 
       # this runs the tests!
       - run:
