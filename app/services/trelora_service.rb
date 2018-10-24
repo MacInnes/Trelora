@@ -1,7 +1,7 @@
 class TreloraService
 
-  def find_member(member_params)
-    find_member_request(member_params)
+  def find_member(email, password)
+    find_member_request(email, password)
   end
 
   private
@@ -14,10 +14,10 @@ class TreloraService
     end
   end
 
-  def find_member_request(member_params)
+  def find_member_request(email, password)
     payload = {
-      "email": member_params[:email],
-      "password": member_params[:password]
+      "email": email,
+      "password": password
     }
     response = conn.post("members", payload.to_json)
     member_data = JSON.parse(response.body, symbolize_names: true)

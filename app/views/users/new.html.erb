@@ -1,9 +1,9 @@
-<%= form_for @user do |f| %>
-  <%= f.label "Member Email:" %>
-  <%= f.text_field :email %>
+<%= form_tag "/users", method: :post do |f| %>
+  <%= label_tag "Member Email:" %>
+  <%= text_field_tag :email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
 
-  <%= f.submit "Login" %>
+  <%= submit_tag "Login" %>
 <% end %>
