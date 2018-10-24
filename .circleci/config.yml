@@ -25,24 +25,25 @@ jobs:
 
     steps:
       - checkout
-      - run:
-          name: database setup
-          command: rake db:{drop,create,migrate}
       # this restores cache if it exists in the same state
       - restore_cache:
           keys:
             - bundle-install-{{ checksum "Gemfile.lock" }}
             - bundle-install-
-      #runs using if cache exists, this runs bundle install and saves it to a specific file (vendor/bundle)
+      # runs using if cache exists, this runs bundle install and saves it to a specific file (vendor/bundle)
       - run:
           name: install dependencies
           command: bundle install --path vendor/bundle
 
-      #this saves the cache
+      # this saves the cache
       - save_cache:
           key: bundle-install-{{ checksum "Gemfile.lock" }}
           paths: vendor/bundle
 
+      # this sets up the db with current migrations
+      - run:
+          name: database setup
+          command: rake db:{drop,create,migrate}
       # this runs the tests!
       - run:
           name: run tests
