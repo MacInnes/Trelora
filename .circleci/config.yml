@@ -21,6 +21,8 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
+           environment:
+             PGHOST: 127.0.0.1
 
     steps:
       - checkout
