@@ -21,7 +21,7 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
-       - image: circleci/10-alpine-postgis
+       - image: 10-alpine-postgis
 
 
     steps:
