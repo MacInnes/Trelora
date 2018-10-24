@@ -21,8 +21,6 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
-       - image: 10-alpine-postgis
-
 
     steps:
       - checkout
@@ -41,11 +39,6 @@ jobs:
           key: bundle-install-{{ checksum "Gemfile.lock" }}
           paths: vendor/bundle
 
-      # this sets up the db with current migrations
-      - run:
-          name: Database Setup
-          command: |
-            bundle exec rake db:{create,migrate}
       # this runs the tests!
       - run:
           name: run tests
