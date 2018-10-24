@@ -6,7 +6,14 @@ class UsersController < ApplicationController
 
   def create
     member_search = MemberSearch.new
-    @member = member_search.find_member(user_params)
+    member = member_search.find_member(user_params)
+    user = User.create(name: member[:user][:name], email: member[:user][:email], auth_token: member[:user][:HTTP_AUTH_TOKEN])
+    if user.save
+      session[:id] = user.id
+      redirect_to "/address"
+    else
+      # TODO: handle invalid login
+    end
   end
 
   private

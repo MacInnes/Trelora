@@ -1,5 +1,3 @@
 class User < ApplicationRecord
-  validates_presence_of :email, :password
-
-  has_secure_password
+  validates_presence_of :email, :name, :auth_token
 end
