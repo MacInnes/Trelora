@@ -1,6 +1,6 @@
-class AddressSearchController < ApplicationController
+class AddressesController < ApplicationController
 
-  def new
+  def find
 
   end
 

@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: 'sessions#new'
   post '/', to: 'sessions#create'
 
-  get "/find", to: 'address_search#new'
-  get "/address", to: 'address_search#show'
+  get "/find", to: 'addresses#find'
+  get "/address", to: 'addresses#show'
 
   resources :users, only: [:create]
 end
