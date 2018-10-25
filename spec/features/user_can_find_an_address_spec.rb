@@ -19,7 +19,6 @@ feature 'user can find an address' do
     visit '/find'
     fill_in :address, with: "not a real address"
     click_on "Find Location"
-    save_and_open_page
     expect(page).to have_content("Address Not Found")
     expect(current_path).to eq('/find')
   end
