@@ -14,11 +14,11 @@ class SessionsController < ApplicationController
       if user
         user.update(member[:user])
         session[:id] = user.id
-        redirect_to "/address"
+        redirect_to "/find"
       else
         user = User.create(member[:user])
         session[:id] = user.id
-        redirect_to "/address"
+        redirect_to "/find"
       end
     else
       flash[:notice] = "Invalid login information."
