@@ -10,6 +10,7 @@ class AddressFacade
     client_data[:client_info][:name]
   end
 
+
   def client_email
     client_data[:client_info][:email]
   end
@@ -75,6 +76,12 @@ class AddressFacade
   # TODO Break this up
   def updates
     listing_data[:home_updates]
+  end
+
+  def location
+    coordinates = [listing_data[:coordinates][:latitude], listing_data[:coordinates][:longitude]].join(",")
+    # "https://maps.googleapis.com/maps/api/staticmap?center=#{coordinates}&size=100x100&zoom=17"
+    #implement google map later
   end
 
 
