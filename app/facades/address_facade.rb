@@ -5,6 +5,10 @@ class AddressFacade
     @auth_token = auth_token
   end
 
+  def is_invalid?
+    address_data == nil
+  end
+
   # Client info
   def client_name
     client_data[:client_info][:name]
