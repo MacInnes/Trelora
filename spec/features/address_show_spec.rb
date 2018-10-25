@@ -35,6 +35,5 @@ describe 'address show page' do
     expect(page).to have_content("New Roof in 07/15")
     expect(page).to have_content("Basement Updated and Finished 8/2016")
     # expect(page).to have_content(@address_facade.retainer)
-    #add coordinates
   end
 end
