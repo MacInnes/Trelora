@@ -15,7 +15,6 @@ describe 'address show page' do
     click_on "Find Location"
 
     expect(current_path).to eq(address_path)
-    save_and_open_page
     @address_facade = AddressFacade.new("1860_south_marion_street-Denver-CO-80210", "this_is_a_very_simple_auth_token_string")
 
     expect(page).to have_content(@address_facade.client_name)
