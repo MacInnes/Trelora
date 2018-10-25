@@ -1,4 +1,4 @@
-class AddressSearch 
+class AddressSearch
   #def initialize(filter = {})
   #   @email = filter[:email]
   #   @password = filter[:password]
@@ -9,7 +9,7 @@ class AddressSearch
     if address_data[:success] == true
       address_data[:result]
     else
-      # TODO: invalid auth handling
+      nil
     end
   end
 
