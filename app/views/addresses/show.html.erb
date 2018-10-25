@@ -1,15 +1,19 @@
-<%= @address_facade.client_name %>
-<%= @address_facade.client_email %>
-<%= @address_facade.client_phone %>
-<%= @address_facade.opted_in? %>
-<%= @address_facade.found_us %>
+<h1><%= @address_facade.address %></h1>
+Name: <%= @address_facade.client_name %>
+Email: <%= @address_facade.client_email %>
+Phone: <%= @address_facade.client_phone %>
+Opted in: <%= @address_facade.opted_in? %>
+Found us: <%= @address_facade.found_us %>
+Estimate: Zillow
 <%= @address_facade.zestimate %>
 <%= @address_facade.zillow_low %>
 <%= @address_facade.zillow_high %>
+         Home Junction
 <%= @address_facade.home_junction_low %>
 <%= @address_facade.home_junction_high %>
 <%= @address_facade.regional_average %>
-<%= @address_facade.enthusiasm%>
-<%= @address_facade.timing %>
-<%= @address_facade.adopter_type %>
-<%= @address_facade.stage %>
+Enthusiasm: <%= @address_facade.enthusiasm%>
+Timing: <%= @address_facade.timing %>
+Adopter type: <%= @address_facade.adopter_type %>
+Updates: <%= @address_facade.updates %>
+Stage: <%= @address_facade.stage %>
