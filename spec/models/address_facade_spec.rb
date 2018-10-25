@@ -61,5 +61,8 @@ RSpec.describe AddressFacade do
                 "interior": "Basement Updated and Finished 8/2016"
             })
     end
+    it '#is_invalid?' do
+      expect(@address_facade.is_invalid?).to eq(false)
+    end
   end
 end
