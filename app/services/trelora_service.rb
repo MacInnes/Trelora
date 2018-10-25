@@ -27,8 +27,6 @@ class TreloraService
     member_data = JSON.parse(response.body, symbolize_names: true)
   end
 
-<<<<<<< HEAD
-=======
   def find_address_request(address, auth_token)
     payload = {
       "address": address,
@@ -37,5 +35,4 @@ class TreloraService
     response = conn.post("properties", payload.to_json)
     address_data = JSON.parse(response.body, symbolize_names: true)
   end
->>>>>>> 0992eca21da30a4047ca6bb715ae7c277c533ac1
 end
