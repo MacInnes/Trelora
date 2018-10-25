@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   def create
     member_search = MemberSearch.new
     member = member_search.find_member(user_params)
-    binding.pry
     redirect_to "/address"
   end
 
