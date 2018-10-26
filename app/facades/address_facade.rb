@@ -83,9 +83,20 @@ class AddressFacade
   end
 
   def location
-    coordinates = [listing_data[:coordinates][:latitude], listing_data[:coordinates][:longitude]].join(",")
-    # "https://maps.googleapis.com/maps/api/staticmap?center=#{coordinates}&size=100x100&zoom=17"
-    #implement google map later
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{coordinates}&size=150x150&zoom=12&markers=%7C#{coordinates}&key=#{ENV["GOOGLE_MAPS_API_KEY"]}"
+  end
+
+  def coordinates
+    [listing_data[:coordinates][:latitude], listing_data[:coordinates][:longitude]].join(",")
+  end
+
+  def address
+    [format_address_data[:address_1], format_address_data[:address_2], format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join(", ")
+  end
+
+  def zillow_address
+    replaced = format_address_data[:address_1].gsub(/ /, "-")
+    [replaced, format_address_data[:address_2], format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join("-")
   end
 
 
@@ -93,6 +104,10 @@ class AddressFacade
 
     def address_data
       @address_data ||= AddressSearch.new.find_address(@address, @auth_token)
+    end
+
+    def format_address_data
+      listing_data[:address]
     end
 
     def listing_data

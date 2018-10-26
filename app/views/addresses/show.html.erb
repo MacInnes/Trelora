@@ -1,11 +1,12 @@
+<h1><%= @address_facade.address %></h1>
 <ul>
 <li>Name: <%= @address_facade.client_name %></li>
-<li>Email: <%= @address_facade.client_email %></li>
-<li>Phone: <%= @address_facade.client_phone %></li>
-<li>Map:  <%= @address_facade.location %></li>
+<li>Email: <a href="mailto:<%=@address_facade.client_email %>"><%= @address_facade.client_email %></a></li>
+<li>Phone: <a href="tel:<%= @address_facade.client_phone %>"><%= @address_facade.client_phone %></a></li>
+<li>Map:  <a target="_blank" href="https://www.google.com/maps/place/<%= @address_facade.coordinates %>"><%= image_tag(@address_facade.location) %></a></li>
 <li>Opted in: <%= @address_facade.opted_in? %></li>
 <li>Found us: <%= @address_facade.found_us %></li>
-Estimate: <li>Zillow</li>
+Estimate: <li><a target="_blank" href="http://www.zillow.com/homedetails/<%= @address_facade.zillow_address %>">Zillow</a></li>
 <li>Zestimate: <%= @address_facade.zestimate %></li>
 <li> Low: <%= @address_facade.zillow_low %></li>
 <li> High: <%= @address_facade.zillow_high %></li>
