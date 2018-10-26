@@ -6,7 +6,8 @@ feature 'user can submit home form' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit '/collect'
-    click_on 'Begin The Listing Consultation'
+    expect(page).to have_content('Begin The Listing Consultation')
+    click_on 'Start'
     fill_in :about_the_home, with: "A home"
     fill_in :recommended_list_price, with: 100000
     fill_in :update_client_enthusiasm, with: "Stoked"
