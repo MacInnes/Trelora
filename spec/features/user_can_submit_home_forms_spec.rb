@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'user can submit home form' do
   scenario 'user fills out forms and submits them' do
+    user = User.create(name: "steve", email: "steven@trel.co", HTTP_AUTH_TOKEN: "this_is_a_very_simple_auth_token_string")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit '/collect'
