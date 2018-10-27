@@ -1,0 +1,48 @@
+<div class="modal fade" id="listingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Begin The Listing Consultation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Start</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(window).on('load', function() {
+  $('#listingModal').modal('show');
+});
+</script>
+
+
+<%= @listing %>
+<%= form_tag "/collect", method: :post do %>
+  <%= label_tag "About The Home" %>
+  <%= text_field_tag :about_the_home %>
+
+  <%= label_tag "Recommended List Price" %>
+  <%= text_field_tag :recommended_list_price %>
+
+  <%= label_tag "Update Client Enthusiasm" %>
+  <%= text_field_tag :update_client_enthusiasm %>
+
+  <%= label_tag "Buyer Agent Commission" %>
+  <%= text_field_tag :buyer_agent_commission %>
+
+  <%= label_tag "About The Seller" %>
+  <%= text_field_tag :about_the_seller %>
+
+  <%= label_tag "Credit Card Number" %>
+  <%= text_field_tag :credit_card_number %>
+
+  <%= label_tag "Credit Card Expiration Date" %>
+  <%= date_field_tag :credit_card_expiration_date, :discard_day %>
+
+  <%= submit_tag "Finish" %>
+<% end %>
