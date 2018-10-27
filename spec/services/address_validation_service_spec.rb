@@ -12,7 +12,7 @@ describe AddressValidationService do
                                         )
     @invalid_avs = AddressValidationService.new(about_the_home: nil,
                                         recommended_list_price: "one thousand",
-                                        update_client_enthusiasm: "123",
+                                        update_client_enthusiasm: nil,
                                         buyer_agent_commission: "five hundred",
                                         about_the_seller: "74",
                                         credit_card_number: "34788197428",
@@ -27,6 +27,9 @@ describe AddressValidationService do
       it 'recommended_list_price' do
         expect(@valid_avs.valid_list_price?).to eq(true)
       end
+      it 'client enthusiasm' do
+        expect(@valid_avs.valid_client_enthusiasm?).to eq(true)
+      end
     end
     describe 'invalid' do
       it 'credit_card_number' do
@@ -34,6 +37,9 @@ describe AddressValidationService do
       end
       it 'recommended_list_price' do
         expect(@invalid_avs.valid_list_price?).to eq(false)
+      end
+      it 'client enthusiasm' do
+        expect(@invalid_avs.valid_client_enthusiasm?).to eq(false)
       end
     end
   end
