@@ -1,6 +1,7 @@
 class FormsController < ApplicationController
+
   def new
-    @listing = params[:address]
+    @listing = current_address
   end
 
   def create

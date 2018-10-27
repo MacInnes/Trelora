@@ -16,6 +16,7 @@ feature 'user can submit home form' do
     fill_in :credit_card_number, with: 1234567891234567890
     fill_in :credit_card_expiration_date, with: "2020-09-15"
     click_on "Finish"
+    # NEED TO MAKE THIS MORE COMPREHENSIVE
   end
 end
 # As an authenticated user,

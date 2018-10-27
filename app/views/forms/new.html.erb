@@ -21,7 +21,7 @@ $(window).on('load', function() {
 </script>
 
 
-
+<%= @listing %>
 <%= form_tag "/collect", method: :post do %>
   <%= label_tag "About The Home" %>
   <%= text_field_tag :about_the_home %>
