@@ -1,10 +1,12 @@
 class AddressValidationService
 
   def initialize(params = {})
-    @credit_card_number     = params[:credit_card_number]
-    @recommended_list_price = params[:recommended_list_price]
-    @client_enthusiasm      = params[:update_client_enthusiasm]
-    @buyer_agent_commission = params[:buyer_agent_commission]
+    @credit_card_number           = params[:credit_card_number]
+    @recommended_list_price       = params[:recommended_list_price]
+    @client_enthusiasm            = params[:update_client_enthusiasm]
+    @buyer_agent_commission       = params[:buyer_agent_commission]
+    @about_the_seller             = params[:about_the_seller]
+    @credit_card_expiration_date  = params[:credit_card_expiration_date]
   end
 
   def valid_credit_card?
@@ -27,6 +29,14 @@ class AddressValidationService
     else
       converted.is_a?(Integer) || converted.is_a?(Float)
     end
+  end
+
+  def valid_seller_info?
+    !@about_the_seller.nil?
+  end
+
+  def valid_credit_card_expiration_date?
+    !@credit_card_expiration_date.nil?
   end
 end
 

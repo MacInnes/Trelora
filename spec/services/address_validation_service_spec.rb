@@ -14,16 +14,13 @@ describe AddressValidationService do
                                         recommended_list_price: "one thousand",
                                         update_client_enthusiasm: nil,
                                         buyer_agent_commission: "five hundred",
-                                        about_the_seller: "74",
+                                        about_the_seller: nil,
                                         credit_card_number: "34788197428",
-                                        credit_card_expiration_date: "1990-10"
+                                        credit_card_expiration_date: nil
                                         )
   end
   describe 'validates that address information is valid' do
     describe 'valid' do
-      it 'credit card number' do
-        expect(@valid_avs.valid_credit_card?).to eq(true)
-      end
       it 'recommended_list_price' do
         expect(@valid_avs.valid_list_price?).to eq(true)
       end
@@ -33,11 +30,17 @@ describe AddressValidationService do
       it 'buyer agent commision' do
         expect(@valid_avs.valid_buyer_agent_commision?).to eq(true)
       end
+      it 'about the seller' do
+        expect(@valid_avs.valid_seller_info?).to eq(true)
+      end
+      it 'credit card number' do
+        expect(@valid_avs.valid_credit_card?).to eq(true)
+      end
+      it 'credit_card_expiration_date' do
+        expect(@valid_avs.valid_credit_card_expiration_date?).to eq(true)
+      end
     end
     describe 'invalid' do
-      it 'credit_card_number' do
-        expect(@invalid_avs.valid_credit_card?).to eq(false)
-      end
       it 'recommended_list_price' do
         expect(@invalid_avs.valid_list_price?).to eq(false)
       end
@@ -46,6 +49,15 @@ describe AddressValidationService do
       end
       it 'buyer agent commision' do
         expect(@invalid_avs.valid_buyer_agent_commision?).to eq(false)
+      end
+      it 'about the seller' do
+        expect(@invalid_avs.valid_seller_info?).to eq(false)
+      end
+      it 'credit_card_number' do
+        expect(@invalid_avs.valid_credit_card?).to eq(false)
+      end
+      it 'credit_card_expiration_date' do
+        expect(@invalid_avs.valid_credit_card_expiration_date?).to eq(false)
       end
     end
   end
