@@ -9,6 +9,15 @@ class AddressValidationService
     @credit_card_expiration_date  = params[:credit_card_expiration_date]
   end
 
+  def valid_input?
+    valid_credit_card? &&
+    valid_list_price? &&
+    valid_client_enthusiasm? &&
+    valid_buyer_agent_commision? &&
+    valid_seller_info? &&
+    valid_credit_card_expiration_date?
+  end
+
   def valid_credit_card?
     CreditCardValidations::Detector.new(@credit_card_number).valid?
   end
