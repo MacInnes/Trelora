@@ -3,9 +3,9 @@ require 'rails_helper'
 describe AddressValidationService do
   before :each do
     @valid_avs = AddressValidationService.new(about_the_home: "Nice",
-                                        recommended_list_price: 100000000,
+                                        recommended_list_price: "100000000",
                                         update_client_enthusiasm: "Excited",
-                                        buyer_agent_commission: 500,
+                                        buyer_agent_commission: "$500",
                                         about_the_seller: "Cool guy",
                                         credit_card_number: "347881974288396",
                                         credit_card_expiration_date: "2020-10"
@@ -30,6 +30,9 @@ describe AddressValidationService do
       it 'client enthusiasm' do
         expect(@valid_avs.valid_client_enthusiasm?).to eq(true)
       end
+      it 'buyer agent commision' do
+        expect(@valid_avs.valid_buyer_agent_commision?).to eq(true)
+      end
     end
     describe 'invalid' do
       it 'credit_card_number' do
@@ -40,6 +43,9 @@ describe AddressValidationService do
       end
       it 'client enthusiasm' do
         expect(@invalid_avs.valid_client_enthusiasm?).to eq(false)
+      end
+      it 'buyer agent commision' do
+        expect(@invalid_avs.valid_buyer_agent_commision?).to eq(false)
       end
     end
   end
