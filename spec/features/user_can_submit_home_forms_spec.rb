@@ -5,7 +5,13 @@ feature 'user can submit home form' do
     user = User.create(name: "steve", email: "steven@trel.co", HTTP_AUTH_TOKEN: "this_is_a_very_simple_auth_token_string")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+    # Sets session address
+    visit '/find'
+    fill_in :address, with: "1860_south_marion_street-Denver-CO-80210"
+    click_on "Find Location"
+
     visit '/collect'
+    
     expect(page).to have_content('Begin The Listing Consultation')
     click_on 'Start'
     fill_in :about_the_home, with: "A home"
