@@ -1,5 +1,4 @@
 class AddressSearchController < ApplicationController
-
   def new
 
   end
