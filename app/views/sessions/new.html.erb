@@ -1,12 +1,25 @@
-<h1>TRELORA</h1>
+<h1 class="sign-in-header">TRELORA</h1>
 <h3>Listing Consultation Tool</h3>
+<div class="container-fluid login-form">
+  <%= form_tag "/", method: :post do |f| %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Member Email" %>
+    </div>
 
-<%= form_tag "/", method: :post do |f| %>
-  <%= label_tag "Member Email:" %>
-  <%= text_field_tag :email %>
+    <div class="form-group row input justify-content-center">
+      <%= text_field_tag :email, nil, class: "form-control" %>
+    </div>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag :password %>
+    </div>
 
-  <%= submit_tag "Login" %>
-<% end %>
+    <div class="form-group row input justify-content-center">
+      <%= password_field_tag :password, nil, class: "form-control"  %>
+    </div>
+
+    <div class="row justify-content-center">
+      <button type="submit" class="btn"><%= submit_tag "Login" %></button>
+    </div>
+  <% end %>
+</div>

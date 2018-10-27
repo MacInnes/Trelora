@@ -6,10 +6,17 @@ h1 {
   text-align: center;
 }
 
+.sign-in-header {
+  padding-top: 4rem;
+}
+
 h3 {
   text-align: center;
 }
 
+.login-form {
+  padding-top: 3rem;
+}
 a {
   color: #97c93d;
 }
@@ -17,4 +24,14 @@ a {
 button {
   background: #97c93d;
   justify-content: center;
+  box-shadow: 4px 3px 3px #bfbfbf;
+}
+
+.label {
+  padding-top: .5rem;
+  margin-bottom: 0;
+}
+
+.input {
+  padding: 0 3rem .5rem 3rem;
 }
