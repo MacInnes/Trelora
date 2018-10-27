@@ -1,3 +1,5 @@
+<%= render "layouts/nav" %>
+
 <h1><%= @address_facade.address %></h1>
 <ul>
 <li>Name: <%= @address_facade.client_name %></li>
@@ -21,3 +23,9 @@ Estimate: <li><a target="_blank" href="http://www.zillow.com/homes/<%= @address_
 <li>Stage: <%= @address_facade.stage %></li>
 <li>Retainer: </li>
 </ul>
+
+<script>
+  $("#nav-find").removeClass("active")
+  $("#nav-prepare").removeClass("disabled").addClass("active").css("background-color", "#97c93d")
+  $("#nav-collect").removeClass("disabled")
+</script>
