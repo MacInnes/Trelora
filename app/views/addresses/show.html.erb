@@ -1,0 +1,23 @@
+<h1><%= @address_facade.address %></h1>
+<ul>
+<li>Name: <%= @address_facade.client_name %></li>
+<li>Email: <a href="mailto:<%=@address_facade.client_email %>"><%= @address_facade.client_email %></a></li>
+<li>Phone: <a href="tel:<%= @address_facade.client_phone %>"><%= @address_facade.client_phone %></a></li>
+<li>Map:  <a target="_blank" href="https://www.google.com/maps/place/<%= @address_facade.coordinates %>"><%= image_tag(@address_facade.location) %></a></li>
+<li>Opted in: <%= @address_facade.opted_in? %></li>
+<li>Found us: <%= @address_facade.found_us %></li>
+Estimate: <li><a target="_blank" href="http://www.zillow.com/homes/<%= @address_facade.zillow_address %>">Zillow</a></li>
+<li>Zestimate: <%= @address_facade.zestimate %></li>
+<li> Low: <%= @address_facade.zillow_low %></li>
+<li> High: <%= @address_facade.zillow_high %></li>
+        <li>Home Junction</li>
+<li>Low: <%= @address_facade.home_junction_low %></li>
+<li>High: <%= @address_facade.home_junction_high %></li>
+<li>Regional Avg: <%= @address_facade.regional_average %></li>
+<li>Enthusiasm: <%= @address_facade.enthusiasm%></li>
+<li>Timing: <%= @address_facade.timing %></li>
+<li>Adopter type: <%= @address_facade.adopter_type %></li>
+<li>Updates: <%= @address_facade.updates%></li>
+<li>Stage: <%= @address_facade.stage %></li>
+<li>Retainer: </li>
+</ul>
