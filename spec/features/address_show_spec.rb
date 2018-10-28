@@ -13,7 +13,7 @@ describe 'address show page' do
     visit '/find'
     fill_in :address, with: "1860_south_marion_street-Denver-CO-80210"
     click_on "Find Location"
-
+    save_and_open_page
     expect(current_path).to eq(address_path)
     @address_facade = AddressFacade.new("1860_south_marion_street-Denver-CO-80210", "this_is_a_very_simple_auth_token_string")
 
@@ -32,8 +32,8 @@ describe 'address show page' do
     expect(page).to have_content(@address_facade.home_junction_low)
     expect(page).to have_content(@address_facade.home_junction_high)
     expect(page).to have_content(@address_facade.adopter_type)
-    expect(page).to have_content("New Roof in 07/15")
-    expect(page).to have_content("Basement Updated and Finished 8/2016")
+    expect(page).to have_content(@address_facade.exterior_updates)
+    expect(page).to have_content(@address_facade.interior_updates)
     # expect(page).to have_content(@address_facade.retainer)
   end
 end
