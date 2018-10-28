@@ -181,7 +181,9 @@
         Updates:
       </div>
       <div class="col-8">
-        <%= @address_facade.updates%>
+        <% @address_facade.updates.each do |k, v| %>
+          <%=k%> - <%=v%>
+        <% end %>
       </div>
     </div>
     <div class="row">
