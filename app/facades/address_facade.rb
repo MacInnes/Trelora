@@ -94,8 +94,6 @@ class AddressFacade
     [format_address_data[:address1], format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join(", ")
   end
 
-  'https://www.zillow.com/homes/1860-South-Marion-Street,-Denver,-CO,-80210_rb/'
-
   def zillow_address
     replaced = format_address_data[:address1].gsub(/ /, "-")
     [replaced, format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join(",-") + "_rb"

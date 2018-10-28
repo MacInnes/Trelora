@@ -8,8 +8,6 @@ class MemberSearch
     member_data = service.find_member(email, password)
     if member_data[:status] == 200
       member_data[:data]
-    else
-      # TODO: invalid auth handling
     end
   end
 
