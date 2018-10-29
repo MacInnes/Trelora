@@ -78,8 +78,15 @@ class AddressFacade
   # Listing data
 
   # TODO Break this up
-  def updates
-    listing_data[:home_updates]
+  # def updates
+  #   listing_data[:home_updates]
+  # end
+  def exterior_updates
+    listing_data[:home_updates][:exterior]
+  end
+
+  def interior_updates
+    listing_data[:home_updates][:interior]
   end
 
   def location
