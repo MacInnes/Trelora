@@ -46,7 +46,7 @@ class TreloraService
       "HTTP_AUTH_TOKEN": auth_token,
       "address": address,
       "about_this_home": params[:about_the_home],
-      "recommended_list_price": params[:recommended_list_price],
+      "list_price": params[:recommended_list_price],
       "client_enthusiasm": params[:update_client_enthusiasm],
       "commission": params[:buyer_agent_commission],
       "about_the_seller": params[:about_the_seller],

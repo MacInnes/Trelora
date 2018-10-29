@@ -15,11 +15,11 @@ feature 'user can submit home form' do
     expect(page).to have_content('Begin The Listing Consultation')
     click_on 'Start'
     fill_in :about_the_home, with: "A home"
-    fill_in :recommended_list_price, with: 100000
+    fill_in :recommended_list_price, with: "100000"
     fill_in :update_client_enthusiasm, with: "Stoked"
-    fill_in :buyer_agent_commission, with: 500
+    fill_in :buyer_agent_commission, with: "500"
     fill_in :about_the_seller, with: "Total dick"
-    fill_in :credit_card_number, with: 347881974288396
+    fill_in :credit_card_number, with: "347881974288396"
     fill_in :credit_card_expiration_date, with: "2020-09-15"
     click_on "Finish"
     # NEED TO MAKE THIS MORE COMPREHENSIVE
