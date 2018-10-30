@@ -1,53 +1,56 @@
 <%= render "layouts/nav" %>
-<%= @listing %>
+<h4 class="address-title"><%= @listing.capitalize %></h4>
 <div class="container-fluid">
   <%= form_tag "/collect", method: :post do %>
-  <div class="row">
-    <%= label_tag "About The Home" %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "About The Home" %>
+    </div>
     <div class="form-group row input justify-content-center">
       <%= text_field_tag :about_the_home, params[:about_the_home], class: "form-control" %>
     </div>
-  </div>
-  <div class="row">
-    <%= label_tag "Recommended List Price" %>
+
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Recommended List Price" %>
+    </div>
     <div class="form-group row input justify-content-center">
       <%= text_field_tag :recommended_list_price, params[:recommended_list_price], class: "form-control" %>
     </div>
-  </div>
 
-  <div class="row">
-    <%= label_tag "Update Client Enthusiasm" %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Update Client Enthusiasm" %>
+    </div>
     <div class="form-group row input justify-content-center">
       <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm], class: "form-control" %>
     </div>
-  </div>
 
-  <div class="row">
-    <%= label_tag "Buyer Agent Commission" %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Buyer Agent Commission" %>
+    </div>
     <div class="form-group row input justify-content-center">
       <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission], class: "form-control" %>
     </div>
-  </div>
 
-  <div class="row">
-    <%= label_tag "About The Seller" %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "About The Seller" %>
+      </div>
     <div class="form-group row input justify-content-center">
       <%= text_field_tag :about_the_seller, params[:about_the_seller], class: "form-control" %>
     </div>
-  </div>
-  <div class="row">
-    <%= label_tag "Credit Card Number" %>
+
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Credit Card Number" %>
+    </div>
     <div class="form-group row input justify-content-center">
       <%= text_field_tag :credit_card_number, params[:credit_card_number], class: "form-control" %>
     </div>
-  </div>
 
-  <div class="row">
-    <%= label_tag "Credit Card Expiration Date" %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Credit Card Expiration Date" %>
+    </div>
     <div class="form-group row input justify-content-center">
       <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true, class: "form-control" %>
     </div>
-  </div>
+
   <div class="row justify-content-center">
     <%= submit_tag "Finish" %>
   </div>
