@@ -1,24 +1,46 @@
-<%= form_tag "/collect", method: :post do %>
-  <%= label_tag "About The Home" %>
-  <%= text_field_tag :about_the_home, params[:about_the_home] %>
+<%= render "layouts/nav" %>
+<%= @listing %>
+<div class="container-fluid">
+  <%= form_tag "/collect", method: :post do %>
+  <div class="row">
+    <%= label_tag "About The Home" %>
+    <%= text_field_tag :about_the_home, params[:about_the_home] %>
+  </div>
+  <div class="row">
+    <%= label_tag "Recommended List Price" %>
+    <%= text_field_tag :recommended_list_price, params[:recommended_list_price]%>
+  </div>
 
-  <%= label_tag "Recommended List Price" %>
-  <%= text_field_tag :recommended_list_price, params[:recommended_list_price]%>
+  <div class="row">
+    <%= label_tag "Update Client Enthusiasm" %>
+    <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm] %>
+  </div>
 
-  <%= label_tag "Update Client Enthusiasm" %>
-  <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm] %>
+  <div class="row">
+    <%= label_tag "Buyer Agent Commission" %>
+    <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission] %>
+  </div>
 
-  <%= label_tag "Buyer Agent Commission" %>
-  <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission] %>
+  <div class="row">
+    <%= label_tag "About The Seller" %>
+    <%= text_field_tag :about_the_seller, params[:about_the_seller] %>
+  </div>
+  <div class="row">
+    <%= label_tag "Credit Card Number" %>
+    <%= text_field_tag :credit_card_number, params[:credit_card_number] %>
+  </div>
+  <div class="row">
+    <%= label_tag "Credit Card Expiration Date" %>
+    <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true %>
+  </div>
+  <div class="row">
+    <%= submit_tag "Finish" %>
+  </div>
+  <% end %>
+</div>
 
-  <%= label_tag "About The Seller" %>
-  <%= text_field_tag :about_the_seller, params[:about_the_seller] %>
-
-  <%= label_tag "Credit Card Number" %>
-  <%= text_field_tag :credit_card_number, params[:credit_card_number] %>
-
-  <%= label_tag "Credit Card Expiration Date" %>
-  <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true %>
-
-  <%= submit_tag "Finish" %>
-<% end %>
+<script>
+  $("#nav-find").removeClass("active")
+  $("#nav-prepare").removeClass("disabled")
+  $("#nav-collect").removeClass("disabled").addClass("active").css("background-color", "#97c93d")
+</script>
