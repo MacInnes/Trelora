@@ -1,5 +1,5 @@
 <%= render "layouts/nav" %>
-<h4 class="address-title"><%= @listing.capitalize %></h4>
+<h4 class="address-title"><%= @listing %></h4>
 <div class="container-fluid">
   <%= form_tag "/collect", method: :post do %>
     <div class="form-group row label justify-content-center">
@@ -52,7 +52,9 @@
     </div>
 
   <div class="row justify-content-center">
-    <%= submit_tag "Finish" %>
+    <button type="submit" class="btn">
+      <%= submit_tag "Finish" %>
+    </button>
   </div>
   <% end %>
 </div>
