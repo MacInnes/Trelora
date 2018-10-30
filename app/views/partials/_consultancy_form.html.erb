@@ -18,7 +18,7 @@
   <%= text_field_tag :credit_card_number, params[:credit_card_number] %>
 
   <%= label_tag "Credit Card Expiration Date" %>
-  <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date] %>
+  <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true %>
 
   <%= submit_tag "Finish" %>
 <% end %>
