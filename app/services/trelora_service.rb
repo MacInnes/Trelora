@@ -10,6 +10,8 @@ class TreloraService
 
   private
 
+  # "Josh's kind of fun" extract this code into a gem
+
   def conn
     Faraday.new(:url => "https://www.trylora.com/api/v0/turing") do |faraday|
       faraday.headers["Content-Type"] = "application/json"
