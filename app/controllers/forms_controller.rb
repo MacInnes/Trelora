@@ -1,5 +1,4 @@
 class FormsController < ApplicationController
-
   def new
     @listing = current_address
   end

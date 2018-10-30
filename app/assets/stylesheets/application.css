@@ -1,15 +1,68 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  font-family: 'Oxygen', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+a {
+  color: #97c93d;
+}
+
+button {
+  background: #97c93d;
+  justify-content: center;
+  box-shadow: 4px 3px 3px #bfbfbf;
+}
+
+li {
+  list-style: none;
+}
+
+.login-form {
+  padding-top: 3rem;
+}
+
+.sign-in-header {
+  padding-top: 4rem;
+}
+
+.label {
+  padding-top: .5rem;
+  margin-bottom: 0;
+}
+
+.input {
+  padding: 0 3rem .5rem 3rem;
+}
+
+.address-search {
+  padding-top: 3rem;
+}
+
+.address-find-header {
+  padding-top: 2rem;
+}
+
+.address-title {
+  border-bottom: 2px solid black;
+  padding: .5rem 1rem 0rem 1rem;
+}
+
+.address-window {
+  overflow-y: auto;
+  max-height: 40rem;
+}
+
+.logo {
+  width: 100%;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.logo img {
+  margin: 0 auto;
+  max-width: 8rem;
+  height: auto;
+}

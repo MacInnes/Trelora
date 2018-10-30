@@ -1,6 +1,24 @@
-<%= form_tag "/address", method: :get do %>
-  <%= label_tag "Pricing Location Address" %>
-  <%= text_field_tag :address, placeholder="Number Street Name, City State Zip" %>
-
-  <%= submit_tag "Find Location" %>
-<% end %>
+<%= render "layouts/nav" %>
+<div class="logo">
+  <img src="https://geekestateblog.com/wp-content/uploads/2017/03/TRELORA-Logo-.png" alt="">
+</div>
+<div class="container-fluid address-search">
+  <%= form_tag "/address", method: :get do %>
+  <div class="form-group row label justify-content-center">
+    <h4><%= label_tag "Pricing Location Address" %></h4>
+  </div>
+  <div class="form-group row input justify-content-center">
+    <%= text_field_tag :address, nil, placeholder: "Number Street Name, City State Zip", class: "form-control" %>
+  </div>
+  <div class="row justify-content-center">
+    <button type="submit" class="btn">
+      <%= submit_tag "Find Location" %>
+    </button>
+  </div>
+  <% end %>
+</div>
+<script>
+  $("#nav-find").toggleClass("active").css("background-color", "#97c93d")
+  $("#nav-prepare").toggleClass("disabled").removeAttr('href')
+  $("#nav-collect").toggleClass("disabled").removeAttr('href')
+</script>

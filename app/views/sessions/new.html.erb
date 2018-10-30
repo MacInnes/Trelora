@@ -1,9 +1,27 @@
-<%= form_tag "/", method: :post do |f| %>
-  <%= label_tag "Member Email:" %>
-  <%= text_field_tag :email %>
+<div class="logo">
+  <img src="https://geekestateblog.com/wp-content/uploads/2017/03/TRELORA-Logo-.png" alt="">
+</div>
+<h3>Listing Consultation Tool</h3>
+<div class="container-fluid login-form">
+  <%= form_tag "/", method: :post do |f| %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag "Member Email" %>
+    </div>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+    <div class="form-group row input justify-content-center">
+      <%= text_field_tag :email, nil, class: "form-control" %>
+    </div>
 
-  <%= submit_tag "Login" %>
-<% end %>
+    <div class="form-group row label justify-content-center">
+      <%= label_tag :password %>
+    </div>
+
+    <div class="form-group row input justify-content-center">
+      <%= password_field_tag :password, nil, class: "form-control"  %>
+    </div>
+
+    <div class="row justify-content-center">
+      <button type="submit" class="btn"><%= submit_tag "Login" %></button>
+    </div>
+  <% end %>
+</div>

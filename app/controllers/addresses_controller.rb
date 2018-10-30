@@ -1,5 +1,4 @@
 class AddressesController < ApplicationController
-
   def find
 
   end

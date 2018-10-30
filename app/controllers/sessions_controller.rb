@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
         redirect_to "/find"
       end
     else
-      flash[:notice] = "Invalid login information."
+      flash.now[:notice] = "Invalid login information."
       render :new
     end
 

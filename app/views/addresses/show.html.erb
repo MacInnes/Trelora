@@ -1,24 +1,211 @@
-<h1><%= @address_facade.address %></h1>
-<ul>
-<li>Name: <%= @address_facade.client_name %></li>
-<li>Email: <a href="mailto:<%=@address_facade.client_email %>"><%= @address_facade.client_email %></a></li>
-<li>Phone: <a href="tel:<%= @address_facade.client_phone %>"><%= @address_facade.client_phone %></a></li>
-<li>Map:  <a target="_blank" href="https://www.google.com/maps/place/<%= @address_facade.coordinates %>"><%= image_tag(@address_facade.location) %></a></li>
-<li>Opted in: <%= @address_facade.opted_in? %></li>
-<li>Found us: <%= @address_facade.found_us %></li>
-Estimate: <li><a target="_blank" href="http://www.zillow.com/homes/<%= @address_facade.zillow_address %>">Zillow</a></li>
-<li>Zestimate: <%= @address_facade.zestimate %></li>
-<li> Low: <%= @address_facade.zillow_low %></li>
-<li> High: <%= @address_facade.zillow_high %></li>
-        <li>Home Junction</li>
-<li>Low: <%= @address_facade.home_junction_low %></li>
-<li>High: <%= @address_facade.home_junction_high %></li>
-<li>Regional Avg: <%= @address_facade.regional_average %></li>
-<li>Enthusiasm: <%= @address_facade.enthusiasm%></li>
-<li>Timing: <%= @address_facade.timing %></li>
-<li>Adopter type: <%= @address_facade.adopter_type %></li>
-<li>Updates: <%= @address_facade.exterior_updates%></li>
-              <%= @address_facade.interior_updates %>
-<li>Stage: <%= @address_facade.stage %></li>
-<li>Retainer: </li>
-</ul>
+<%= render "layouts/nav" %>
+
+<div class="container-fluid">
+  <h4 class="address-title"><%= @address_facade.address %></h4>
+  <div class="address-window">
+    <div class="row">
+      <div class="col-4">
+        Name:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.client_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Email:
+      </div>
+      <div class="col-8">
+        <a href="mailto:<%=@address_facade.client_email %>"><%= @address_facade.client_email %></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Phone:
+      </div>
+      <div class="col-8">
+        <a href="tel:<%= @address_facade.client_phone %>"><%= @address_facade.client_phone %></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Map:
+      </div>
+      <div class="col-8">
+        <a target="_blank" href="https://www.google.com/maps/place/<%= @address_facade.coordinates %>"><%= image_tag(@address_facade.location) %></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Opted in:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.opted_in? %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Found us:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.found_us %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Estimate:
+      </div>
+      <div class="col-8">
+        <a target="_blank" href="http://www.zillow.com/homes/<%= @address_facade.zillow_address %>">Zillow</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-4">
+            Zestimate:
+          </div>
+          <div class="col-8">
+            $<%= number_with_delimiter(@address_facade.zestimate, delimiter: ',') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-4">
+            Low:
+          </div>
+          <div class="col-8">
+            $<%= number_with_delimiter(@address_facade.zillow_low, delimiter: ',') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-4">
+            High:
+          </div>
+          <div class="col-8">
+            $<%= number_with_delimiter(@address_facade.zillow_high, delimiter: ',') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        Home Junction
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-4">
+            Low:
+          </div>
+          <div class="col-8">
+            $<%= number_with_delimiter(@address_facade.home_junction_low, delimiter: ',') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-4">
+            High:
+          </div>
+          <div class="col-8">
+            $<%= number_with_delimiter(@address_facade.home_junction_high, delimiter: ',') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-4">
+            Average:
+          </div>
+          <div class="col-8">
+            $<%= number_with_delimiter(@address_facade.regional_average, delimiter: ',') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-4">
+        Enthusiasm:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.enthusiasm%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Timing:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.timing %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Adopter:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.adopter_type %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Updates:
+      </div>
+      <div class="col-8">
+        Exterior: <%= @address_facade.exterior_updates%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+    </div>
+    <div class="col-8">
+      <%= @address_facade.interior_updates %>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        Stage:
+      </div>
+      <div class="col-8">
+        <%= @address_facade.stage %>
+      </div>
+    </div>
+    Retainer: $500
+  </div>
+</div>
+
+
+<script>
+  $("#nav-find").removeClass("active")
+  $("#nav-prepare").removeClass("disabled").addClass("active").css("background-color", "#97c93d")
+  $("#nav-collect").removeClass("disabled")
+</script>
