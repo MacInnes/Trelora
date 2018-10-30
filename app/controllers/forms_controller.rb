@@ -11,6 +11,7 @@ class FormsController < ApplicationController
                                    current_user.HTTP_AUTH_TOKEN,
                                    session[:address],
                                    address_params)
+      render :new
     else
       flash[:failure] = "Invalid form data."
       render :new
