@@ -181,10 +181,15 @@
         Updates:
       </div>
       <div class="col-8">
-        <% @address_facade.updates.each do |k, v| %>
-          <%=k%> - <%=v%>
-        <% end %>
+        Exterior: <%= @address_facade.exterior_updates%>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+    </div>
+    <div class="col-8">
+      <%= @address_facade.interior_updates %>
     </div>
     <div class="row">
       <div class="col-4">

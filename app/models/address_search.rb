@@ -8,8 +8,6 @@ class AddressSearch
     address_data = service.find_address(address, auth_token)
     if address_data[:success] == true
       address_data[:result]
-    else
-      nil
     end
   end
 
