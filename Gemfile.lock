@@ -74,6 +74,9 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
+    credit_card_validations (3.5.0)
+      activemodel (>= 3, <= 6)
+      activesupport (>= 3, <= 6)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
     docile (1.3.1)
@@ -244,6 +247,7 @@ DEPENDENCIES
   capybara-email
   coffee-rails (~> 4.2)
   cowsay
+  credit_card_validations
   database_cleaner
   factory_bot_rails
   faker

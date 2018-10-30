@@ -8,6 +8,10 @@ class TreloraService
     find_address_request(address, auth_token)
   end
 
+  def post_form(email, auth_token, address, params = {})
+    post_form_request(email, auth_token, address, params)
+  end
+
   private
 
   def conn
@@ -34,5 +38,21 @@ class TreloraService
     }
     response = conn.post("properties", payload.to_json)
     address_data = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def post_form_request(email, auth_token, address, params = {})
+    payload = {
+      "email": email,
+      "HTTP_AUTH_TOKEN": auth_token,
+      "address": address,
+      "about_this_home": params[:about_the_home],
+      "list_price": params[:recommended_list_price],
+      "client_enthusiasm": params[:update_client_enthusiasm],
+      "commission": params[:buyer_agent_commission],
+      "about_the_seller": params[:about_the_seller],
+      "credit_card": params[:credit_card_number],
+      "exp_date": params[:credit_card_expiration_date]
+    }
+    response = conn.post("update_listing_consultation", payload.to_json)
   end
 end
