@@ -21,6 +21,9 @@ describe AddressValidationService do
   end
   describe 'validates that address information is valid' do
     describe 'valid' do
+      it 'valid_input?' do
+        expect(@valid_avs.valid_input?).to eq(true)
+      end
       it 'recommended_list_price' do
         expect(@valid_avs.valid_list_price?).to eq(true)
       end
@@ -58,6 +61,9 @@ describe AddressValidationService do
       end
       it 'credit_card_expiration_date' do
         expect(@invalid_avs.valid_credit_card_expiration_date?).to eq(false)
+      end
+      it 'valid_input' do
+        expect(@invalid_avs.valid_input?).to eq(false)
       end
     end
   end
