@@ -27,6 +27,15 @@ class AddressFacade
     client_data[:opted_in][:result]
   end
 
+  def opted_in
+    if opted_in? == true
+      "Yes"
+    else
+      "No"
+    end
+  end
+
+
   def found_us
     client_data[:found_us]
   end
