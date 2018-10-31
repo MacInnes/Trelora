@@ -16,7 +16,7 @@ describe 'address show page' do
 
     expect(current_path).to eq(address_path)
     address_facade = AddressFacade.new("1860_south_marion_street-Denver-CO-80210", "this_is_a_very_simple_auth_token_string")
-    save_and_open_page
+
     expect(page).to have_content(address_facade.client_name)
     expect(page).to have_content(address_facade.client_email)
     expect(page).to have_content(address_facade.opted_in)
