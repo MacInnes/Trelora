@@ -6,7 +6,8 @@ class AddressValidationService
     @client_enthusiasm            = params[:update_client_enthusiasm]
     @buyer_agent_commission       = params[:buyer_agent_commission]
     @about_the_seller             = params[:about_the_seller]
-    @credit_card_expiration_date  = params[:credit_card_expiration_date]
+    @credit_card_expiration_month = params[:date][:credit_card_expiration_month]
+    @credit_card_expiration_year  = params[:date][:credit_card_expiration_year]
   end
 
   def valid_input?
@@ -45,7 +46,7 @@ class AddressValidationService
   end
 
   def valid_credit_card_expiration_date?
-    !@credit_card_expiration_date.nil?
+    !@credit_card_expiration_month.nil? && !@credit_card_expiration_year.nil?
   end
 end
 

@@ -19,7 +19,7 @@ describe 'address show page' do
 
     expect(page).to have_content(address_facade.client_name)
     expect(page).to have_content(address_facade.client_email)
-    expect(page).to have_content(address_facade.opted_in?)
+    expect(page).to have_content(address_facade.opted_in)
     expect(page).to have_content(address_facade.client_phone)
     expect(page).to have_content(address_facade.found_us)
     expect(page).to have_content(address_facade.enthusiasm)

@@ -1,24 +1,83 @@
-<%= form_tag "/collect", method: :post do %>
-  <%= label_tag "About The Home" %>
-  <%= text_field_tag :about_the_home, params[:about_the_home] %>
+<%= render "layouts/nav" %>
+<h4 class="address-title"><%= @listing %></h4>
+<div class="container-fluid">
+  <div class="address-window">
+    <%= form_tag "/collect", method: :post do %>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "About The Home" %>
+      </div>
+      <div class="form-group row input justify-content-center">
+        <%= text_area_tag :about_the_home, params[:about_the_home], class: "form-control" %>
+      </div>
 
-  <%= label_tag "Recommended List Price" %>
-  <%= text_field_tag :recommended_list_price, params[:recommended_list_price]%>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "Recommended List Price" %>
+      </div>
+      <div class="form-group row input justify-content-center">
+        <%= text_field_tag :recommended_list_price, params[:recommended_list_price], class: "form-control" %>
+      </div>
 
-  <%= label_tag "Update Client Enthusiasm" %>
-  <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm] %>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "Update Client Enthusiasm" %>
+      </div>
+      <div class="form-group row input justify-content-center">
+        <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm], class: "form-control" %>
+      </div>
 
-  <%= label_tag "Buyer Agent Commission" %>
-  <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission] %>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "Buyer Agent Commission" %>
+      </div>
+      <div class="form-group row input justify-content-center">
+        <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission], class: "form-control" %>
+      </div>
 
-  <%= label_tag "About The Seller" %>
-  <%= text_field_tag :about_the_seller, params[:about_the_seller] %>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "About The Seller" %>
+        </div>
+      <div class="form-group row input justify-content-center">
+        <%= text_area_tag :about_the_seller, params[:about_the_seller], class: "form-control" %>
+      </div>
 
-  <%= label_tag "Credit Card Number" %>
-  <%= text_field_tag :credit_card_number, params[:credit_card_number] %>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "Credit Card Number" %>
+      </div>
+      <div class="form-group row input justify-content-center">
+        <%= text_field_tag :credit_card_number, params[:credit_card_number], class: "form-control" %>
+      </div>
 
-  <%= label_tag "Credit Card Expiration Date" %>
-  <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true %>
+      <div class="form-group row label justify-content-center">
+        <%= label_tag "Credit Card Expiration Date" %>
+      </div>
+      <div class="form-group row input justify-content-center">
+        <div class="col-2">
+        </div>
+          <div class="col-4">
+            <div class="form-control">
+              <%= select_month(Date.today, field_name: 'credit_card_expiration_month', use_month_numbers: true) %>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-control">
+              <%= select_year(Date.today, field_name: 'credit_card_expiration_year', start_year: 2018, end_year: 2025) %>
+            </div>
+          </div>
+        <div class="col-2">
+        </div>
+      </div>
 
-  <%= submit_tag "Finish" %>
-<% end %>
+    <div class="row justify-content-center">
+      <button type="submit" class="btn">
+        <%= submit_tag "Finish" %>
+      </button>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $("#nav-find").removeClass("active")
+  $("#nav-prepare").removeClass("disabled")
+  $("#nav-collect").removeClass("disabled").addClass("active").css("background-color", "#97c93d")
+  var height = $(window).height();
+  $('.address-window').css("max-height", height * 0.8)
+</script>

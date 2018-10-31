@@ -1,14 +1,15 @@
 <div class="modal fade" id="listingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Begin The Listing Consultation</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content justify-content-center">
+      <div class="modal-header justify-content-center">
+
+
+        <h5 id="exampleModalLabel">Begin The Listing Consultation</h5>
+
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Start</button>
+      <div class="modal-footer justify-content-center">
+
+        <button type="button" class="btn" data-dismiss="modal">Start</button>
       </div>
     </div>
   </div>
@@ -21,5 +22,5 @@ $(window).on('load', function() {
 </script>
 
 
-<%= @listing %>
+
 <%= render "partials/consultancy_form" %>

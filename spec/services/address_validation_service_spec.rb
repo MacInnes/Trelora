@@ -8,7 +8,8 @@ describe AddressValidationService do
                                         buyer_agent_commission: "$500",
                                         about_the_seller: "Cool guy",
                                         credit_card_number: "347881974288396",
-                                        credit_card_expiration_date: "2020-10"
+                                        date: {credit_card_expiration_month: "10",
+                                        credit_card_expiration_year: "2018"}
                                         )
     @invalid_avs = AddressValidationService.new(about_the_home: nil,
                                         recommended_list_price: "one thousand",
@@ -16,7 +17,8 @@ describe AddressValidationService do
                                         buyer_agent_commission: "five hundred",
                                         about_the_seller: nil,
                                         credit_card_number: "34788197428",
-                                        credit_card_expiration_date: nil
+                                        date: {credit_card_expiration_month: nil,
+                                        credit_card_expiration_year: nil}
                                         )
   end
   describe 'validates that address information is valid' do
