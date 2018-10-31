@@ -52,7 +52,6 @@ li {
 
 .address-window {
   overflow-y: auto;
-  max-height: 40rem;
 }
 
 .logo {
@@ -66,7 +65,7 @@ li {
   max-width: 8rem;
   height: auto;
 }
-.modal-dialog {
+.modal-dialog, .modal-content {
   text-align: center;
-  height: 100%;
+  height: 80%;
 }
