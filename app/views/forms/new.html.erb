@@ -34,6 +34,9 @@
 $(window).on('load', function() {
   $('#listingModal').modal('show');
 });
+$(window).on('ajax:success', function() {
+  $('#finishModal').modal('show');
+});
 </script>
 
 

@@ -1,6 +1,7 @@
 class FormsController < ApplicationController
   def new
     @listing = current_address
+    # render :new, :partial => "partials/start_consultancy_modal"
   end
 
   def create
@@ -13,7 +14,7 @@ class FormsController < ApplicationController
       render :new
     else
       flash[:failure] = "Invalid form data."
-      render :new
+      render :new, status: 400
     end
   end
 
