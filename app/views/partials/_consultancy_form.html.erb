@@ -1,24 +1,24 @@
 <%= form_tag "/collect", remote: true, method: :post do %>
   <%= label_tag "About The Home" %>
-  <%= text_field_tag :about_the_home, params[:about_the_home]%>
+  <%= text_field_tag :about_the_home, params[:about_the_home], required: true %>
 
   <%= label_tag "Recommended List Price" %>
-  <%= text_field_tag :recommended_list_price, params[:recommended_list_price] %>
+  <%= text_field_tag :recommended_list_price, params[:recommended_list_price], required: true  %>
 
   <%= label_tag "Update Client Enthusiasm" %>
-  <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm]  %>
+  <%= text_field_tag :update_client_enthusiasm, params[:update_client_enthusiasm], required: true   %>
 
   <%= label_tag "Buyer Agent Commission" %>
-  <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission]  %>
+  <%= text_field_tag :buyer_agent_commission, params[:buyer_agent_commission], required: true   %>
 
   <%= label_tag "About The Seller" %>
-  <%= text_field_tag :about_the_seller, params[:about_the_seller]  %>
+  <%= text_field_tag :about_the_seller, params[:about_the_seller], required: true   %>
 
   <%= label_tag "Credit Card Number" %>
-  <%= text_field_tag :credit_card_number, params[:credit_card_number]  %>
+  <%= text_field_tag :credit_card_number, params[:credit_card_number], required: true   %>
 
   <%= label_tag "Credit Card Expiration Date" %>
-  <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true  %>
+  <%= date_field_tag :credit_card_expiration_date, params[:credit_card_expiration_date], discard_day: true, required: true   %>
 
-  <%= submit_tag "Finish", id: "submit_form_button"  %>
+  <%= submit_tag "Finish", id: "submit_form_button", onclick: "stopTimer()"%>
 <% end %>

@@ -26,7 +26,7 @@ feature 'user can submit home form' do
     expect(current_path).to eq(collect_path)
     expect(page).to have_content("Listing Consultation Complete")
     click_on "Dismiss"
-    expect(page).to have_button('Start', disabled: true)
+    expect(page).to have_button('Finish', disabled: true)
     # NEED TO MAKE THIS MORE COMPREHENSIVE
   end
   scenario 'user fills out wrong form information' do

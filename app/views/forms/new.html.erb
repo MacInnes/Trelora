@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Start</button>
+        <button type="button" id="start_timer" class="btn btn-secondary" data-dismiss="modal" onclick="startTimer()">Start</button>
       </div>
     </div>
   </div>
@@ -23,6 +23,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <div>
+        <h3>Time In Home</h3>
+      </div>
+      <div class='text-center'>
+        <span id="minutes">0</span> minute(s)
+        <span id="seconds">0</span> seconds.
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
       </div>
@@ -30,15 +37,42 @@
   </div>
 </div>
 
+<!-- <div class="timer">
+    <span id="minutes">0</span> minute(s)
+    <span id="seconds">0</span> seconds.
+</div> -->
+
+<script type="text/javascript">
+
+			activateButtons(false, true);
+
+			function startTimer() {
+				var seconds = 0;
+				timer = setInterval(function() {
+					seconds ++;
+					document.getElementById("seconds").innerText = seconds % 60;
+					document.getElementById("minutes").innerText = parseInt(seconds / 60);
+					activateButtons(true, false);
+				}, 1000);
+			}
+
+			function stopTimer() {
+				clearInterval(timer);
+				activateButtons(false, true);
+			}
+
+			function activateButtons(start, stop) {
+				document.getElementById("start-button").disabled = start;
+				document.getElementById("stop-button").disabled = stop;
+			}
+</script>
+
 <script>
 $(window).on('load', function() {
   $('#listingModal').modal('show');
 });
 $(window).on('ajax:success', function() {
   $('#finishModal').modal('show');
-});
-$(window).on('ajax:failure', function() {
-  $('#flash').html('<%= j render partial: "layouts/flash" %>');
 });
 </script>
 
