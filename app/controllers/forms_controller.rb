@@ -26,8 +26,7 @@ class FormsController < ApplicationController
                     :buyer_agent_commission,
                     :about_the_seller,
                     :credit_card_number,
-                    :date["credit_card_expiration_month"],
-                    :date["credit_card_expiration_year"]
+                    date: [:credit_card_expiration_month, :credit_card_expiration_year]
                     )
     end
 end
