@@ -22,11 +22,10 @@ feature 'user can submit home form' do
     fill_in :credit_card_number, with: "347881974288396"
     fill_in :credit_card_expiration_date, with: "2020-09-15"
     click_on "Finish"
-    # save_and_open_page
-    # expect(current_path).to eq(collect_path)
-    # expect(page).to have_content("Listing Consultation Complete")
-    # click_on "Dismiss"
-    # expect(page).to have_button('Start', disabled: true)
+    expect(current_path).to eq(collect_path)
+    expect(page).to have_content("Listing Consultation Complete")
+    click_on "Dismiss"
+    expect(page).to have_button('Start', disabled: true)
     # NEED TO MAKE THIS MORE COMPREHENSIVE
   end
   scenario 'user fills out wrong form information' do
