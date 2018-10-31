@@ -67,5 +67,6 @@ li {
   height: auto;
 }
 .modal-dialog {
+  text-align: center;
   height: 100%;
 }
