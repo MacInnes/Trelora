@@ -13,7 +13,7 @@ class FormsController < ApplicationController
                                    address_params)
       render :new
     else
-      flash[:failure] = "Invalid form data."
+      flash.now[:failure] = "Invalid form data."
       render :new, status: 400
     end
   end
