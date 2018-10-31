@@ -1,7 +1,6 @@
 class FormsController < ApplicationController
   def new
     @listing = current_address
-    # render :new, :partial => "partials/start_consultancy_modal"
   end
 
   def create

@@ -39,6 +39,12 @@ $(window).on('ajax:success', function() {
 });
 </script>
 
+<% if flash[:failure] %>
+<script>
+  $('#flash').html('<%= j render partial: "layouts/flash" %>');
+</script>
+<% end %>
+
 
 <%= @listing %>
 <%= render "partials/consultancy_form" %>
