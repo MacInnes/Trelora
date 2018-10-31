@@ -37,13 +37,11 @@ $(window).on('load', function() {
 $(window).on('ajax:success', function() {
   $('#finishModal').modal('show');
 });
+$(window).on('ajax:failure', function() {
+  $('#flash').html('<%= j render partial: "layouts/flash" %>');
+});
 </script>
 
-<% if flash[:failure] %>
-<script>
-  $('#flash').html('<%= j render partial: "layouts/flash" %>');
-</script>
-<% end %>
 
 
 <%= @listing %>
