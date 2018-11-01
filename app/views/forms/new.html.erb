@@ -34,27 +34,19 @@
 
 <script type="text/javascript">
 
-			activateButtons(false, true);
-
 			function startTimer() {
 				var seconds = 0;
 				timer = setInterval(function() {
 					seconds ++;
 					document.getElementById("seconds").innerText = seconds % 60;
 					document.getElementById("minutes").innerText = parseInt(seconds / 60);
-					activateButtons(true, false);
 				}, 1000);
 			}
 
 			function stopTimer() {
 				clearInterval(timer);
-				activateButtons(false, true);
 			}
 
-			function activateButtons(start, stop) {
-				document.getElementById("start-button").disabled = start;
-				document.getElementById("stop-button").disabled = stop;
-			}
 </script>
 
 <script>
