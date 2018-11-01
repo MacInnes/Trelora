@@ -1,0 +1,17 @@
+class Address
+
+  def initialize(address_value)
+    @address_value = address_value
+  end
+
+  def value
+    @address_value
+  end
+
+  def name
+    test = @address_value.gsub(/[_-]/, ' ').split.map do |word|
+      word.capitalize
+    end.join(' ')
+  end
+
+end
