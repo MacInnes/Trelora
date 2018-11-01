@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.trylora.com/api/v0/turing/properties
+    body:
+      encoding: UTF-8
+      string: '{"address":"1860_south_marion_street-Denver-CO-80210","HTTP_AUTH_TOKEN":"this_is_a_very_simple_auth_token_string"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 01 Nov 2018 03:22:27 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"bbb9551d6c0ddeecd7500eee500d3dfe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 11801ee4-25bc-4c1c-8e5e-3676a756f2e3
+      X-Runtime:
+      - '0.023630'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"result":{"client":{"client_info":{"name":"Tyler Long","email":"tyler+12@trelora.com","phone":"3033333333"},"opted_in":{"result":true},"found_us":"Google
+        Search","enthusiasm":"Interested in Moving Forward","timing":"Less than 2
+        Months","adopter_type":"Early Adopter","stage":"Just getting interested in
+        prepping home for sale. Wants to sell and use $$ to buy with us as well."},"pricing_estimates":{"zillow":{"zestimate":704000,"low":696000,"high":754000},"home_junction":{"low":578000,"high":679000,"regional_avg":689000}},"listing":{"coordinates":{"latitude":"39.683019","longitude":"-104.971964"},"id":"1860_south_marion_street-Denver-CO-80210","mls":"N/A","home_updates":{"exterior":"New
+        Roof in 07/15","interior":"Basement Updated and Finished 8/2016"},"address":{"address1":"1860
+        South Marion Street","address2":"","city":"Denver","state":"CO","zip":"80210"},"baths":3,"beds":4}}}'
+    http_version: 
+  recorded_at: Thu, 01 Nov 2018 03:22:28 GMT
+recorded_with: VCR 4.0.0

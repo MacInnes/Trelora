@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.trylora.com/api/v0/turing/properties
+    body:
+      encoding: UTF-8
+      string: '{"address":"not a real address","HTTP_AUTH_TOKEN":"this_is_a_very_simple_auth_token_string"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 01 Nov 2018 03:32:59 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c5a70e191d8f64ba89fc89adba3a7946"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8799e00a-cf45-47b0-8a77-eaa31bbf95fa
+      X-Runtime:
+      - '0.005014'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7Im1lc3NhZ2UiOiJQcm9wZXJ0eSBub3QgZm91bmQhIPCfj6Hwn5qoIiwic3RhdHVzIjo0MDR9fQ==
+    http_version: 
+  recorded_at: Thu, 01 Nov 2018 03:32:59 GMT
+recorded_with: VCR 4.0.0
