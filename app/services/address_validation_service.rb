@@ -28,7 +28,7 @@ class AddressValidationService
   end
 
   def valid_client_enthusiasm?
-    !@client_enthusiasm.nil?
+    !is_nil_or_empty?(@client_enthusiasm)
   end
 
   def valid_buyer_agent_commision?
@@ -42,18 +42,22 @@ class AddressValidationService
   end
 
   def valid_seller_info?
-    !@about_the_seller.nil?
+    !is_nil_or_empty?(@about_the_seller)
   end
 
   def valid_credit_card_expiration_date?
-    !@credit_card_expiration_month.nil? && !@credit_card_expiration_year.nil?
+    !is_nil_or_empty?(@credit_card_expiration_month) && !is_nil_or_empty?(@credit_card_expiration_year)
   end
 
   private
 
-  def sanitize_currency(number)
-    number.gsub(/[$,%]/, '')
-  end
+    def is_nil_or_empty?(value)
+      value.nil? || value.empty?
+    end
+
+    def sanitize_currency(number)
+      number.gsub(/[$,%]/, '')
+    end
 
   def currency_converter(number)
     if number.include?('.')
@@ -62,4 +66,4 @@ class AddressValidationService
       number.to_i
     end
   end
-end 
+end

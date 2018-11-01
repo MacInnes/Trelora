@@ -2,7 +2,7 @@
 <h4 class="address-title"><%= @listing %></h4>
 <div class="container-fluid">
   <div class="address-window">
-    <%= form_tag "/collect", method: :post do %>
+    <%= form_tag "/collect", method: :post, id: "consultancy_form" do %>
       <div class="form-group row label justify-content-center">
         <%= label_tag "About The Home" %>
       </div>
@@ -66,13 +66,19 @@
       </div>
 
     <div class="row justify-content-center">
-      <button type="submit" class="btn">
+      <button type="submit" id="submit_form_button" class="btn" onclick="stopTimer()">
         <%= submit_tag "Finish" %>
       </button>
     </div>
     <% end %>
   </div>
 </div>
+
+<script>
+$("#submit_form_button").on('click', function() {
+  $('#finishModal').modal('show');
+});
+</script>
 
 <script>
   $("#nav-find").removeClass("active")
