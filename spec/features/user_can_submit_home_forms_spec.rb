@@ -46,8 +46,8 @@ feature 'user can submit home form' do
     visit '/find'
 
     VCR.use_cassette('submit-home-failing') do
-      select "1860 South Marion Street Denver Co 80210", from: :address
-      click_on "Find Location"
+      select '1860 South Marion Street Denver Co 80210', from: :address
+      click_on 'Find Location'
     end
 
     visit collect_path
