@@ -9,9 +9,7 @@ describe 'address show page' do
                  Address.new('910-portland_place-Boulder-CO-80304')]
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     allow_any_instance_of(ApplicationController).to receive(:find_addresses).and_return(addresses)
-    # json_response = File.read("./fixtures/address_response.json")
-    # stub_request(:get, "https://www.trylora.com/api/v0/turing/properties?address=1860_south_marion_street-Denver-CO-80210&HTTP_AUTH_TOKEN=this_is_a_very_simple_auth_token_string").
-    # to_return(status: 200, body: json_response)
+  
     VCR.use_cassette('address-show-page') do
       visit '/find'
       select '1860 South Marion Street Denver Co 80210', from: :address
