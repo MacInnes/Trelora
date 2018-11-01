@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+  before_action :logged_in?
+
   def find
     @addresses = find_addresses
   end

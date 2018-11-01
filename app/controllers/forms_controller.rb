@@ -1,4 +1,7 @@
 class FormsController < ApplicationController
+  before_action :logged_in?
+  before_action :confirm_address_exists
+
   def new
     @listing = current_address
   end
