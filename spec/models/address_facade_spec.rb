@@ -13,6 +13,7 @@ describe "AddressFacade" do
         expect(@address_facade.client_email).to eq("tyler+12@trelora.com")
         expect(@address_facade.client_phone).to eq("3033333333")
         expect(@address_facade.opted_in?).to eq(true)
+        expect(@address_facade.opted_in).to eq("Yes")
         expect(@address_facade.found_us).to eq("Google Search")
         expect(@address_facade.enthusiasm).to eq("Interested in Moving Forward")
         expect(@address_facade.timing).to eq("Less than 2 Months")
