@@ -2,8 +2,11 @@ require 'rails_helper'
 
 describe 'address show page' do
   it 'displays address breakdown' do
-    user = User.create(name: 'Maria', email: 'email@email.com', HTTP_AUTH_TOKEN: 'this_is_a_very_simple_auth_token_string')
-    addresses = [Address.new('1860_south_marion_street-Denver-CO-80210'), Address.new('910-portland_place-Boulder-CO-80304')]
+    user = User.create(name: 'Maria',
+                       email: 'email@email.com',
+                       HTTP_AUTH_TOKEN: 'this_is_a_very_simple_auth_token_string')
+    addresses = [Address.new('1860_south_marion_street-Denver-CO-80210'),
+                 Address.new('910-portland_place-Boulder-CO-80304')]
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     allow_any_instance_of(ApplicationController).to receive(:find_addresses).and_return(addresses)
     # json_response = File.read("./fixtures/address_response.json")
