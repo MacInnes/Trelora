@@ -50,11 +50,19 @@
 </script>
 
 <script>
-$(window).on('load', function() {
-  $('#listingModal').modal('show');
+
+$(document).ready(function() {
+  var cookie = Cookies.get('modal_shown')
+
+    if (Cookies.get('modal_shown') == null) {
+        Cookies.set('modal_shown', 'yes', { expires: 7, path: '/' });
+        $('#listingModal').modal('show');
+    }
 });
+
 $("#dismiss_button").on('click', function() {
   $("input, select, option, textarea", "#consultancy_form").prop('disabled',true);
+  Cookies.remove('modal_shown')
 })
 $("#dismiss_button").on('click', function () {
     $(".date").addClass('disabled-date');
