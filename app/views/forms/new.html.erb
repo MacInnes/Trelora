@@ -65,7 +65,7 @@ $(window).on('load', function() {
   $('#listingModal').modal('show');
 });
 $("#dismiss_button").on('click', function() {
-  $("#consultancy_form :input").prop('readonly', true);
+  $("input, select, option, textarea", "#consultancy_form").prop('disabled',true);
 })
 </script>
 
