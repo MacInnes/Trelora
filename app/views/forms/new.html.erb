@@ -56,6 +56,8 @@ $(document).ready(function() {
 
     if (Cookies.get('modal_shown') == null) {
         Cookies.set('modal_shown', 'yes', { expires: 7, path: '/' });
+        var currentTime = new Date();
+        Cookies.set('start_time'), Date()
         $('#listingModal').modal('show');
     }
 });
