@@ -53,7 +53,7 @@ class TreloraService
       "commission": params[:buyer_agent_commission],
       "about_the_seller": params[:about_the_seller],
       "credit_card": params[:credit_card_number],
-      "exp_date": params[:credit_card_expiration_date]
+      "exp_date": params[:date][:credit_card_expiration_month] + "/" + params[:date][:credit_card_expiration_year]
     }
     response = conn.post("update_listing_consultation", payload.to_json)
   end

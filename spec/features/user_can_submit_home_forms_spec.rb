@@ -20,7 +20,8 @@ feature 'user can submit home form' do
     fill_in :buyer_agent_commission, with: "500"
     fill_in :about_the_seller, with: "Total dick"
     fill_in :credit_card_number, with: "347881974288396"
-    fill_in :credit_card_expiration_date, with: "2020-09-15"
+    select "10", from: "date[credit_card_expiration_month]"
+    select "2018", from: "date[credit_card_expiration_year]"
     click_on "Finish"
     save_and_open_page
     expect(current_path).to eq(collect_path)
@@ -47,7 +48,8 @@ feature 'user can submit home form' do
     fill_in :buyer_agent_commission, with: "500"
     fill_in :about_the_seller, with: "Hot"
     fill_in :credit_card_number, with: "3478396"
-    fill_in :credit_card_expiration_date, with: "2020-09-15"
+    select "10", from: "date[credit_card_expiration_month]"
+    select "2018", from: "date[credit_card_expiration_year]"
     click_on "Finish"
     expect(page).to have_content("Invalid form data.")
   end

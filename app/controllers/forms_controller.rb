@@ -10,7 +10,7 @@ class FormsController < ApplicationController
                                    current_user.HTTP_AUTH_TOKEN,
                                    session[:address],
                                    address_params)
-      render :new
+      # render :new
     else
       flash.now[:failure] = "Something went wrong while posting the form, please try again."
       render :new, status: 400
@@ -26,6 +26,7 @@ class FormsController < ApplicationController
                     :buyer_agent_commission,
                     :about_the_seller,
                     :credit_card_number,
-                    :credit_card_expiration_date)
+                    date: [:credit_card_expiration_month, :credit_card_expiration_year]
+                    )
     end
 end
