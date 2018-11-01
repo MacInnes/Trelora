@@ -1,5 +1,4 @@
 class TreloraService
-
   def find_member(email, password)
     find_member_request(email, password)
   end
@@ -14,10 +13,8 @@ class TreloraService
 
   private
 
-  # "Josh's kind of fun" extract this code into a gem
-
   def conn
-    Faraday.new(:url => 'https://www.trylora.com/api/v0/turing') do |faraday|
+    Faraday.new(url: 'https://www.trylora.com/api/v0/turing') do |faraday|
       faraday.headers['Content-Type'] = 'application/json'
       faraday.headers['Accept'] = 'application/json'
       faraday.adapter Faraday.default_adapter
@@ -30,7 +27,7 @@ class TreloraService
       'password': password
     }
     response = conn.post('members', payload.to_json)
-    member_data = JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def find_address_request(address, auth_token)
@@ -39,7 +36,7 @@ class TreloraService
       'HTTP_AUTH_TOKEN': auth_token
     }
     response = conn.post('properties', payload.to_json)
-    address_data = JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def post_form_request(email, auth_token, address, params = {})
@@ -53,8 +50,8 @@ class TreloraService
       'commission': params[:buyer_agent_commission],
       'about_the_seller': params[:about_the_seller],
       'credit_card': params[:credit_card_number],
-      'exp_date': params[:date][:credit_card_expiration_month] + "/" + params[:date][:credit_card_expiration_year]
+      'exp_date': params[:date][:credit_card_expiration_month] + '/' + params[:date][:credit_card_expiration_year]
     }
-    response = conn.post('update_listing_consultation', payload.to_json)
+    conn.post('update_listing_consultation', payload.to_json)
   end
 end
