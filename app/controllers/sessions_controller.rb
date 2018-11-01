@@ -34,8 +34,4 @@ class SessionsController < ApplicationController
     end
   end
 
-  def format_addresses(address_array)
-
-  end
-
 end
