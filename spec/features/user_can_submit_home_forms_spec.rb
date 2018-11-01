@@ -57,15 +57,9 @@ feature 'user can submit home form' do
     fill_in :credit_card_number, with: "3478396"
     select "10", from: "date[credit_card_expiration_month]"
     select "2018", from: "date[credit_card_expiration_year]"
-<<<<<<< HEAD
-    click_on "Finish"
-    expect(page).to have_content("Something went wrong while posting the form, please try again.")
-=======
     VCR.use_cassette('submit-home-finish-failing') do
       click_on "Finish"
     end
-
-    expect(page).to have_content("Invalid form data.")
->>>>>>> e5979567c59c729b847bbb58af51b8f059ba9c6a
+    expect(page).to have_content("Something went wrong while posting the form, please try again.")
   end
 end
