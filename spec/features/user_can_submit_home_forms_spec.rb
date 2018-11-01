@@ -32,8 +32,7 @@ feature 'user can submit home form' do
     # expect(current_path).to eq(collect_path)
     # expect(page).to have_content("Listing Consultation Complete")
     # click_on "Dismiss"
-    # expect(page).to have_button('Start', disabled: true)
-    # NEED TO MAKE THIS MORE COMPREHENSIVE
+    # expect(page).to have_button('Finish', disabled: true)
   end
   scenario 'user fills out wrong form information' do
     user = User.create(name: "steve", email: "steven@trel.co", HTTP_AUTH_TOKEN: "this_is_a_very_simple_auth_token_string")
@@ -61,7 +60,6 @@ feature 'user can submit home form' do
     VCR.use_cassette('submit-home-finish-failing') do
       click_on "Finish"
     end
-    
-    expect(page).to have_content("Invalid form data.")
+    expect(page).to have_content("Something went wrong while posting the form, please try again.")
   end
 end
