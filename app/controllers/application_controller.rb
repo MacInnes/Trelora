@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_address
-    if session[:address]
-      session[:address].gsub(/[_-]/, ' ')
+    if session[:formatted_address]
+      session[:formatted_address]
     else
       "No address selected"
     end
