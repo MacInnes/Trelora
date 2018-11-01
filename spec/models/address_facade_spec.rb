@@ -27,7 +27,7 @@ describe 'AddressFacade' do
         expect(@address_facade.regional_average).to eq(689_000)
         expect(@address_facade.exterior_updates).to eq('New Roof in 07/15')
         expect(@address_facade.interior_updates).to eq('Basement Updated and Finished 8/2016')
-        expect(@address_facade.is_invalid?).to eq(false)
+        expect(@address_facade.invalid?).to eq(false)
       end
     end
   end

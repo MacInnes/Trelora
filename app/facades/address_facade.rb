@@ -1,15 +1,13 @@
 class AddressFacade
-
   def initialize(address, auth_token)
     @address = address
     @auth_token = auth_token
   end
 
-  def is_invalid?
-    address_data == nil
+  def invalid?
+    address_data.nil?
   end
 
-  # Client info
   def client_name
     client_data[:client_info][:name]
   end
@@ -86,10 +84,6 @@ class AddressFacade
 
   # Listing data
 
-  # TODO Break this up
-  # def updates
-  #   listing_data[:home_updates]
-  # end
   def exterior_updates
     listing_data[:home_updates][:exterior]
   end
@@ -115,30 +109,29 @@ class AddressFacade
     [replaced, format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join(",-") + "_rb"
   end
 
-
   private
 
-    def address_data
-      @address_data ||= AddressSearch.new.find_address(@address, @auth_token)
-    end
+  def address_data
+    @address_data ||= AddressSearch.new.find_address(@address, @auth_token)
+  end
 
-    def format_address_data
-      listing_data[:address]
-    end
+  def format_address_data
+    listing_data[:address]
+  end
 
-    def listing_data
-      address_data[:listing]
-    end
+  def listing_data
+    address_data[:listing]
+  end
 
-    def client_data
-      address_data[:client]
-    end
+  def client_data
+    address_data[:client]
+  end
 
-    def zillow_data
-      address_data[:pricing_estimates][:zillow]
-    end
+  def zillow_data
+    address_data[:pricing_estimates][:zillow]
+  end
 
-    def home_junction_data
-      address_data[:pricing_estimates][:home_junction]
-    end
+  def home_junction_data
+    address_data[:pricing_estimates][:home_junction]
+  end
 end
