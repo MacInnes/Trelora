@@ -19,6 +19,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'credit_card_validations'
 
+
 group :test do
   gem 'simplecov'
   gem 'webmock'
@@ -36,7 +37,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'newrelic_rpm'
 end
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
