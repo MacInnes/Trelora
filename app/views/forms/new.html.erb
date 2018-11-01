@@ -64,6 +64,9 @@ $(window).on('load', function() {
 $("#dismiss_button").on('click', function() {
   $("input, select, option, textarea", "#consultancy_form").prop('disabled',true);
 })
+$("#dismiss_button").on('click', function () {
+    $(".date").addClass('disabled-date');
+})
 </script>
 
 
