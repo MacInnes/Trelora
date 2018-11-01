@@ -10,11 +10,10 @@ class FormsController < ApplicationController
                                    current_user.HTTP_AUTH_TOKEN,
                                    session[:address],
                                    address_params)
-      render :new
     else
       flash.now[:failure] = "Invalid form data."
-      render :new
     end
+    render :new
   end
 
   private
