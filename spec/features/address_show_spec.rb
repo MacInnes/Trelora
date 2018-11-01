@@ -9,7 +9,7 @@ describe 'address show page' do
                  Address.new('910-portland_place-Boulder-CO-80304')]
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     allow_any_instance_of(ApplicationController).to receive(:find_addresses).and_return(addresses)
-  
+
     VCR.use_cassette('address-show-page') do
       visit '/find'
       select '1860 South Marion Street Denver Co 80210', from: :address
@@ -19,7 +19,9 @@ describe 'address show page' do
     expect(current_path).to eq(address_path)
 
     VCR.use_cassette('address-show-page') do
-      address_facade = AddressFacade.new('1860_south_marion_street-Denver-CO-80210', 'this_is_a_very_simple_auth_token_string')
+      address = '1860_south_marion_street-Denver-CO-80210'
+      token = 'this_is_a_very_simple_auth_token_string'
+      address_facade = AddressFacade.new(address, token)
 
       expect(page).to have_content(address_facade.client_name)
       expect(page).to have_content(address_facade.client_email)
