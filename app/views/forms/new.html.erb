@@ -29,7 +29,7 @@
         <span id="seconds">0</span> seconds.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+        <button type="button" id="dismiss_button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
       </div>
     </div>
   </div>
@@ -64,6 +64,9 @@
 $(window).on('load', function() {
   $('#listingModal').modal('show');
 });
+$("#dismiss_button").on('click', function() {
+  $("#consultancy_form :input").prop('readonly', true);
+})
 </script>
 
 
