@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'address show page' do
   it 'displays address breakdown' do
-    user = User.create(name: "Maria", email: "email@email.com", HTTP_AUTH_TOKEN: "this_is_a_very_simple_auth_token_string")
+    user = User.create(name: 'Maria', email: 'email@email.com', HTTP_AUTH_TOKEN: 'this_is_a_very_simple_auth_token_string')
     addresses = [Address.new('1860_south_marion_street-Denver-CO-80210'), Address.new('910-portland_place-Boulder-CO-80304')]
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     allow_any_instance_of(ApplicationController).to receive(:find_addresses).and_return(addresses)
@@ -11,8 +11,8 @@ describe 'address show page' do
     # to_return(status: 200, body: json_response)
     VCR.use_cassette('address-show-page') do
       visit '/find'
-      select "1860 South Marion Street Denver Co 80210", from: :address
-      click_on "Find Location"
+      select '1860 South Marion Street Denver Co 80210', from: :address
+      click_on 'Find Location'
     end
 
     expect(current_path).to eq(address_path)

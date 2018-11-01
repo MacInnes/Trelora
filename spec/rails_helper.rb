@@ -12,7 +12,6 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
@@ -37,7 +36,7 @@ RSpec.configure do |config|
   end
   config.after(:each) do # cleans after each test
     DatabaseCleaner.clean
-   end
+  end
 end
 
 VCR.configure do |config|
