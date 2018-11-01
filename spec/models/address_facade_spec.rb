@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'AddressFacade' do
-
   before :each do
     @address_facade = AddressFacade.new('1860_south_marion_street-Denver-CO-80210', 'this_is_a_very_simple_auth_token_string')
   end

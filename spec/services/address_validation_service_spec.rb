@@ -4,16 +4,17 @@ describe AddressValidationService do
   describe 'validates that address information is valid' do
     describe 'valid' do
       before :each do
-        @valid_avs = AddressValidationService.new(about_the_home: 'Nice',
-                                                  recommended_list_price: '100000000',
-                                                  update_client_enthusiasm: 'Excited',
-                                                  buyer_agent_commission: '$500',
-                                                  about_the_seller: 'Cool guy',
-                                                  credit_card_number: '347881974288396',
-                                                  date: {
-                                                    credit_card_expiration_month: '10',
-                                                    credit_card_expiration_year: '2018'
-                                                    })
+        @valid_avs =
+          AddressValidationService.new(about_the_home: 'Nice',
+                                       recommended_list_price: '100000000',
+                                       update_client_enthusiasm: 'Excited',
+                                       buyer_agent_commission: '$500',
+                                       about_the_seller: 'Cool guy',
+                                       credit_card_number: '347881974288396',
+                                       date: {
+                                         credit_card_expiration_month: '10',
+                                         credit_card_expiration_year: '2018'
+                                       })
       end
 
       it 'valid_input?' do
@@ -40,16 +41,17 @@ describe AddressValidationService do
     end
     describe 'invalid' do
       before(:each) do
-        @invalid_avs = AddressValidationService.new(about_the_home: nil,
-                                                    recommended_list_price: 'one thousand',
-                                                    update_client_enthusiasm: nil,
-                                                    buyer_agent_commission: 'five hundred',
-                                                    about_the_seller: nil,
-                                                    credit_card_number: '34788197428',
-                                                    date: {
-                                                      credit_card_expiration_month: nil,
-                                                      credit_card_expiration_year: nil
-                                                      })
+        @invalid_avs =
+          AddressValidationService.new(about_the_home: nil,
+                                       recommended_list_price: 'one thousand',
+                                       update_client_enthusiasm: nil,
+                                       buyer_agent_commission: 'five hundred',
+                                       about_the_seller: nil,
+                                       credit_card_number: '34788197428',
+                                       date: {
+                                         credit_card_expiration_month: nil,
+                                         credit_card_expiration_year: nil
+                                       })
       end
       it 'recommended_list_price' do
         expect(@invalid_avs.valid_list_price?).to eq(false)
