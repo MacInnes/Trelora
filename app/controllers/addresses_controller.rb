@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   def find
-
+    @addresses = find_addresses
   end
 
   def show

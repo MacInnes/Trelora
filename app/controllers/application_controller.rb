@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :find_addresses
 
   def current_user
     @user ||= User.find(session[:id])
@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
       session[:address].gsub(/[_-]/, ' ')
     else
       "No address selected"
+    end
+  end
+
+  def find_addresses
+    session[:addresses].map do |address_data|
+      Address.new(address_data)
     end
   end
 end

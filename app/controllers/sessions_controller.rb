@@ -13,17 +13,28 @@ class SessionsController < ApplicationController
       user = User.find_by(HTTP_AUTH_TOKEN: member[:user][:HTTP_AUTH_TOKEN])
       if user
         user.update(member[:user])
-        session[:id] = user.id
-        redirect_to "/find"
       else
         user = User.create(member[:user])
-        session[:id] = user.id
-        redirect_to "/find"
       end
+      session[:id] = user.id
+      redirect_to "/find"
+      session[:addresses] = member_addresses(member)
     else
       flash.now[:notice] = "Invalid login information."
       render :new
     end
+
+  end
+
+  private
+
+  def member_addresses(member)
+    member[:available_address][:addresses].map do |key, value|
+      value[:id]
+    end
+  end
+
+  def format_addresses(address_array)
 
   end
 
