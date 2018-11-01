@@ -15,6 +15,7 @@ class FormsController < ApplicationController
       flash.now[:failure] = "Something went wrong while posting the form, please try again."
       render :new, status: 400
     end
+    render :new
   end
 
   private

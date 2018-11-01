@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.trylora.com/api/v0/turing/members
+    body:
+      encoding: UTF-8
+      string: '{"email":"asdf@asdf.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 01 Nov 2018 03:30:02 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"29a6a478e2e042e50e203094b57c1ef4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7e18331b-934f-487b-b091-86fc34276e9f
+      X-Runtime:
+      - '0.010536'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7ImVycm9yIjoiTWVtYmVyIGRvZXMgbm90IGV4aXN0ISDwn5SQIiwic3RhdHVzIjo0MjJ9fQ==
+    http_version: 
+  recorded_at: Thu, 01 Nov 2018 03:30:02 GMT
+recorded_with: VCR 4.0.0
