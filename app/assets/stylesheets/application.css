@@ -69,3 +69,7 @@ li {
   text-align: center;
   height: 80%;
 }
+.disabled-date {
+   background-color: #e9ecef;
+   opacity: 1;
+}

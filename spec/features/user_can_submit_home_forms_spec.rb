@@ -19,16 +19,16 @@ feature 'user can submit home form' do
 
     expect(page).to have_content('Begin The Listing Consultation')
     click_on 'Start'
-    fill_in :about_the_home, with: "A home"
-    fill_in :recommended_list_price, with: "100000"
-    fill_in :update_client_enthusiasm, with: "Stoked"
-    fill_in :buyer_agent_commission, with: "500"
-    fill_in :about_the_seller, with: "Excited"
-    fill_in :credit_card_number, with: "347881974288396"
-    select "10", from: "date[credit_card_expiration_month]"
-    select "2018", from: "date[credit_card_expiration_year]"
+    fill_in :about_the_home, with: 'A home'
+    fill_in :recommended_list_price, with: '100000'
+    fill_in :update_client_enthusiasm, with: 'Stoked'
+    fill_in :buyer_agent_commission, with: '500'
+    fill_in :about_the_seller, with: 'Excited'
+    fill_in :credit_card_number, with: '347881974288396'
+    select '10', from: 'date[credit_card_expiration_month]'
+    select '2018', from: 'date[credit_card_expiration_year]'
     VCR.use_cassette('submit-home-finish-passing') do
-      click_on "Finish"
+      click_on 'Finish'
     end
     # save_and_open_page
     # expect(current_path).to eq(collect_path)
@@ -53,16 +53,16 @@ feature 'user can submit home form' do
     visit collect_path
     expect(page).to have_content('Begin The Listing Consultation')
     click_on 'Start'
-    fill_in :about_the_home, with: "A home"
-    fill_in :recommended_list_price, with: "100000"
-    fill_in :update_client_enthusiasm, with: "Stoked"
-    fill_in :buyer_agent_commission, with: "500"
-    fill_in :about_the_seller, with: "Hot"
-    fill_in :credit_card_number, with: "3478396"
-    select "10", from: "date[credit_card_expiration_month]"
-    select "2018", from: "date[credit_card_expiration_year]"
+    fill_in :about_the_home, with: 'A home'
+    fill_in :recommended_list_price, with: '100000'
+    fill_in :update_client_enthusiasm, with: 'Stoked'
+    fill_in :buyer_agent_commission, with: '500'
+    fill_in :about_the_seller, with: 'Hot'
+    fill_in :credit_card_number, with: '3478396'
+    select '10', from: 'date[credit_card_expiration_month]'
+    select '2018', from: 'date[credit_card_expiration_year]'
     VCR.use_cassette('submit-home-finish-failing') do
-      click_on "Finish"
+      click_on 'Finish'
     end
     expect(page).to have_content("Something went wrong while posting the form, please try again.")
   end

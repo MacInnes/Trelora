@@ -1,12 +1,7 @@
 class SessionsController < ApplicationController
-
-
-  def new
-
-  end
+  def new; end
 
   def create
-    # TODO: refactor this mess
     member_search = MemberSearch.new
     member = member_search.find_member(params[:email], params[:password])
     if member
@@ -17,13 +12,13 @@ class SessionsController < ApplicationController
         user = User.create(member[:user])
       end
       session[:id] = user.id
-      redirect_to "/find"
+
       session[:addresses] = member_addresses(member)
+      redirect_to "/find"
     else
-      flash.now[:notice] = "Invalid login information."
+      flash.now[:notice] = 'Invalid login information.'
       render :new
     end
-
   end
 
   private
@@ -33,5 +28,4 @@ class SessionsController < ApplicationController
       value[:id]
     end
   end
-
 end
