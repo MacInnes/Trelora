@@ -48,18 +48,18 @@ class AddressValidationService
   def valid_credit_card_expiration_date?
     !@credit_card_expiration_month.nil? && !@credit_card_expiration_year.nil?
   end
-end
 
   private
 
-    def sanitize_currency(number)
-      number.gsub(/[$,%]/, '')
-    end
+  def sanitize_currency(number)
+    number.gsub(/[$,%]/, '')
+  end
 
-    def currency_converter(number)
-      if number.include?('.')
-        number.to_f
-      else
-        number.to_i
-      end
+  def currency_converter(number)
+    if number.include?('.')
+      number.to_f
+    else
+      number.to_i
     end
+  end
+end 
