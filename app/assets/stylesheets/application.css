@@ -10,7 +10,7 @@ a {
   color: #97c93d;
 }
 
-button {
+button, .btn {
   background: #97c93d;
   justify-content: center;
   box-shadow: 4px 3px 3px #bfbfbf;
