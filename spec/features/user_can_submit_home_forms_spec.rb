@@ -64,6 +64,6 @@ feature 'user can submit home form' do
     VCR.use_cassette('submit-home-finish-failing') do
       click_on 'Finish'
     end
-    expect(page).to have_content("Something went wrong while posting the form, please try again.")
+    expect(page).to have_content("Invalid form data, please try again.")
   end
 end
