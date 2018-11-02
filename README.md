@@ -1,6 +1,6 @@
 # Trelora
 
-A listing consultation mobile app designed to be used by Trelora home agents during client visits.
+A listing consultation tool, designed to be used as a mobile app, by Trelora agents during client home visits.
 
 # Prerequisites/ Dependencies
  This project assumes you have installed: 
@@ -14,7 +14,6 @@ A listing consultation mobile app designed to be used by Trelora home agents dur
  * Figaro
  * Launchy
  * Pry
- * Rspec-rails
  * Shoulda-Matchers
  * SimpleCov
  * VCR
