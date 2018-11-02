@@ -15,21 +15,22 @@ class FormsController < ApplicationController
                                    address_params)
       # render :new
     else
-      flash.now[:failure] = "Something went wrong while posting the form, please try again."
+      flash.now[:failure] = 'Something went wrong while posting the form, please try again.'
       render :new, status: 400
     end
   end
 
   private
 
-    def address_params
-      params.permit(:about_the_home,
-                    :recommended_list_price,
-                    :update_client_enthusiasm,
-                    :buyer_agent_commission,
-                    :about_the_seller,
-                    :credit_card_number,
-                    date: [:credit_card_expiration_month, :credit_card_expiration_year]
-                    )
-    end
+  def address_params
+    params.permit(:about_the_home,
+                  :recommended_list_price,
+                  :update_client_enthusiasm,
+                  :buyer_agent_commission,
+                  :about_the_seller,
+                  :credit_card_number,
+                  date:
+                    %i[credit_card_expiration_month
+                       credit_card_expiration_year])
+  end
 end

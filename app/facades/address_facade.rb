@@ -12,7 +12,6 @@ class AddressFacade
     client_data[:client_info][:name]
   end
 
-
   def client_email
     client_data[:client_info][:email]
   end
@@ -27,12 +26,11 @@ class AddressFacade
 
   def opted_in
     if opted_in? == true
-      "Yes"
+      'Yes'
     else
-      "No"
+      'No'
     end
   end
-
 
   def found_us
     client_data[:found_us]
@@ -54,9 +52,7 @@ class AddressFacade
     client_data[:stage]
   end
 
-  # TODO Missing retainer field
-
-  # Estimates
+  # TODO: Missing retainer field
 
   def zestimate
     zillow_data[:zestimate]
@@ -82,8 +78,6 @@ class AddressFacade
     home_junction_data[:regional_avg]
   end
 
-  # Listing data
-
   def exterior_updates
     listing_data[:home_updates][:exterior]
   end
@@ -93,20 +87,29 @@ class AddressFacade
   end
 
   def location
-    "https://maps.googleapis.com/maps/api/staticmap?center=#{coordinates}&size=150x150&zoom=12&markers=%7C#{coordinates}&key=#{ENV["GOOGLE_MAPS_API_KEY"]}"
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{coordinates}
+      &size=150x150
+      &zoom=12&markers=%7C#{coordinates}
+      &key=#{ENV['GOOGLE_MAPS_API_KEY']}"
   end
 
   def coordinates
-    [listing_data[:coordinates][:latitude], listing_data[:coordinates][:longitude]].join(",")
+    [listing_data[:coordinates][:latitude],
+     listing_data[:coordinates][:longitude]].join(',')
   end
 
   def address
-    [format_address_data[:address1], format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join(", ")
+    [format_address_data[:address1],
+     format_address_data[:city],
+     format_address_data[:state],
+     format_address_data[:zip]].join(', ')
   end
 
   def zillow_address
-    replaced = format_address_data[:address1].gsub(/ /, "-")
-    [replaced, format_address_data[:city], format_address_data[:state], format_address_data[:zip]].join(",-") + "_rb"
+    replaced = format_address_data[:address1].gsub(/ /, '-')
+    [replaced, format_address_data[:city],
+     format_address_data[:state],
+     format_address_data[:zip]].join(',-') + '_rb'
   end
 
   private
