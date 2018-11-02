@@ -1,7 +1,6 @@
-# Trelora 
+# Trelora
 
-Listing Consultation Tool for client home visits. 
-
+Listing Consultation Tool for client home visits.
 
 # Prerequisites/ Dependencies
  This project assumes you have installed: 
@@ -20,8 +19,6 @@ Listing Consultation Tool for client home visits.
  * SimpleCov
  * VCR
  * Webmock
- 
-
 
 ## Installing
 
@@ -29,27 +26,28 @@ Listing Consultation Tool for client home visits.
 
 `git clone git@github.com:MacInnes/Trelora.git`
 
-2. Run: 
+2. Run:
 
 `bundle install`
-  
+
 `bundle update`
-  
-3. Setup the database: 
+
+3. Setup the database:
 
  `rake db:setup`
 
 
 
 ## Running the tests
-To run the full testing suite, run `rspec` from the command line. 
+To run the full testing suite, run `rspec` from the command line.
 
 ## Heroku Link
+[Trelora](https://trelora.herokuapp.com/)
 
 
 ## Contributors
 
-[Andrew Mockett ](https://github.com/MacInnes)
+[Andrew Mockett](https://github.com/MacInnes)
 
 [Tara Craig](https://github.com/TCraig7)
 
