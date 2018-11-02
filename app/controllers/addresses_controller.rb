@@ -11,9 +11,8 @@ class AddressesController < ApplicationController
     if !@address_facade.invalid?
       session[:formatted_address] = @address_facade.address
     else
-      flash[:failure] = "Address Not Found"
+      flash[:failure] = 'Address Not Found'
       redirect_to '/find'
     end
   end
-
 end

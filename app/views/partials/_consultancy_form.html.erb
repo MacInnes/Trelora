@@ -66,21 +66,16 @@
       </div>
 
     <div class="row justify-content-center">
-      <button type="submit" id="submit_form_button" class="btn" onclick="stopTimer()">
-        <%= submit_tag "Finish" %>
-      </button>
+      <%= submit_tag "Finish", class: "btn", onclick: "stopTimer()", id: "submit_form_button" %>
     </div>
     <% end %>
   </div>
 </div>
 
 <script>
-$("#submit_form_button").on('click', function() {
-  $('#finishModal').modal('show');
-});
-</script>
-
-<script>
+  $("#submit_form_button").on('click', function() {
+    $('#finishModal').modal('show');
+  });
   $("#nav-find").removeClass("active")
   $("#nav-prepare").removeClass("disabled")
   $("#nav-collect").removeClass("disabled").addClass("active").css("background-color", "#97c93d")

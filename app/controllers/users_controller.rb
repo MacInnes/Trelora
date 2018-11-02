@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def create
     member_search = MemberSearch.new
-    member = member_search.find_member(user_params)
-    redirect_to "/address"
+    member_search.find_member(user_params)
+    redirect_to '/address'
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :password)
   end

@@ -1,16 +1,23 @@
-# Trelora 
+# Trelora
 
-Listing Consultation Tool for client home visits. 
+A listing consultation tool, designed to be used as a mobile app, by Trelora agents during client home visits. This project was created as a Module 3 group project for Turing's Backend Engineering program.
 
-
-# Prerequisites
+# Prerequisites/ Dependencies
  This project assumes you have installed: 
- * Ruby
- * Rails
+ * Ruby 2.4.1
+ * Rails 5.2.1
  * Faraday
  * Figaro
- 
-
+ * Byebug
+ * Capybara
+ * Faraday
+ * Figaro
+ * Launchy
+ * Pry
+ * Shoulda-Matchers
+ * SimpleCov
+ * VCR
+ * Webmock
 
 ## Installing
 
@@ -18,27 +25,28 @@ Listing Consultation Tool for client home visits.
 
 `git clone git@github.com:MacInnes/Trelora.git`
 
-2. Run: 
+2. Run:
 
 `bundle install`
-  
+
 `bundle update`
-  
-3. Setup the database: 
+
+3. Setup the database:
 
  `rake db:setup`
 
 
 
 ## Running the tests
-To run the full testing suite, run `rspec` from the command line. 
+To run the full testing suite, run `rspec` from the command line.
 
 ## Heroku Link
+[Trelora](https://trelora.herokuapp.com/)
 
 
 ## Contributors
 
-[Andrew Mockett ](https://github.com/MacInnes)
+[Andrew Mockett](https://github.com/MacInnes)
 
 [Tara Craig](https://github.com/TCraig7)
 

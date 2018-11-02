@@ -4,19 +4,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :find_addresses
 
   def current_user
-    if session[:id]
-      @user ||= User.find(session[:id])
-    else
-      nil
-    end
+    @user ||= User.find(session[:id]) if session[:id]
   end
 
   def current_address
-    if session[:formatted_address]
-      session[:formatted_address]
-    else
-      "No address selected"
-    end
+    session[:formatted_address] if session[:formatted_address]
   end
 
   def find_addresses
@@ -27,14 +19,14 @@ class ApplicationController < ActionController::Base
 
   def confirm_address_exists
     unless session[:address]
-      flash[:error] = "We lost your address! Please enter a new one"
-      redirect_to '/'
+      flash[:error] = 'We lost your address! Please enter a new one'
+      redirect_to '/find'
     end
   end
 
   def logged_in?
     unless current_user
-      flash[:error] = "Please log in to access more content."
+      flash[:error] = 'Please log in to access more content.'
       redirect_to '/'
     end
   end
