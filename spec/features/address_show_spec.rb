@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+#example
+
 describe 'address show page' do
   it 'displays address breakdown' do
     user = User.create(name: 'Maria',
