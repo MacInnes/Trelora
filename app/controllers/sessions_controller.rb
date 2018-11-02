@@ -12,9 +12,8 @@ class SessionsController < ApplicationController
         user = User.create(member[:user])
       end
       session[:id] = user.id
-
       session[:addresses] = member_addresses(member)
-      redirect_to "/find"
+      redirect_to '/find'
     else
       flash.now[:notice] = 'Invalid login information.'
       render :new
@@ -24,7 +23,7 @@ class SessionsController < ApplicationController
   private
 
   def member_addresses(member)
-    member[:available_address][:addresses].map do |key, value|
+    member[:available_address][:addresses].map do |_key, value|
       value[:id]
     end
   end
