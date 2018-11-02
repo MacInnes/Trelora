@@ -4,8 +4,8 @@ Listing Consultation Tool for client home visits.
 
 # Prerequisites/ Dependencies
  This project assumes you have installed: 
- * Ruby
- * Rails
+ * Ruby 2.4.1
+ * Rails 5.2.1
  * Faraday
  * Figaro
  * Byebug
