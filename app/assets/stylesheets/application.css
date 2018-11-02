@@ -1,5 +1,8 @@
-body {
+html, body {
   font-family: 'Oxygen', sans-serif;
+  background: linear-gradient(white, #b7da79);
+  height: 100%;
+  width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -18,6 +21,11 @@ button, .btn {
 
 li {
   list-style: none;
+}
+
+.modal-header, .modal-content, .modal-dialog, .modal-footer {
+  background: linear-gradient(to right, white, #b7da79);
+  border: none;
 }
 
 .login-form {
