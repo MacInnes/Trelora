@@ -1,6 +1,6 @@
 # Trelora
 
-A listing consultation tool, designed to be used as a mobile app, by Trelora agents during client home visits.
+A listing consultation tool, designed to be used as a mobile app, by Trelora agents during client home visits. This project was created as a Module 3 group project for Turing's Backend Engineering program.
 
 # Prerequisites/ Dependencies
  This project assumes you have installed: 
