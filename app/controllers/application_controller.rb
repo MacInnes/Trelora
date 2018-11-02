@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   def confirm_address_exists
     unless session[:address]
       flash[:error] = 'We lost your address! Please enter a new one'
-      redirect_to '/'
+      redirect_to '/find'
     end
   end
 
