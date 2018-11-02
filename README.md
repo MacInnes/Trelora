@@ -3,12 +3,23 @@
 Listing Consultation Tool for client home visits. 
 
 
-# Prerequisites
+# Prerequisites/ Dependencies
  This project assumes you have installed: 
  * Ruby
  * Rails
  * Faraday
  * Figaro
+ * Byebug
+ * Capybara
+ * Faraday
+ * Figaro
+ * Launchy
+ * Pry
+ * Rspec-rails
+ * Shoulda-Matchers
+ * SimpleCov
+ * VCR
+ * Webmock
  
 
 
