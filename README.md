@@ -1,6 +1,6 @@
 # Trelora
 
-Listing Consultation Tool for client home visits.
+A listing consultation tool designed to be used by Trelora home agents during client visits.
 
 # Prerequisites/ Dependencies
  This project assumes you have installed: 
