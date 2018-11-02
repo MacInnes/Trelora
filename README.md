@@ -1,15 +1,15 @@
-# Trelora 
+# Trelora
 
-Listing Consultation Tool for client home visits. 
+Listing Consultation Tool for client home visits.
 
 
 # Prerequisites
- This project assumes you have installed: 
+ This project assumes you have installed:
  * Ruby
  * Rails
  * Faraday
  * Figaro
- 
+
 
 
 ## Installing
@@ -18,22 +18,23 @@ Listing Consultation Tool for client home visits.
 
 `git clone git@github.com:MacInnes/Trelora.git`
 
-2. Run: 
+2. Run:
 
 `bundle install`
-  
+
 `bundle update`
-  
-3. Setup the database: 
+
+3. Setup the database:
 
  `rake db:setup`
 
 
 
 ## Running the tests
-To run the full testing suite, run `rspec` from the command line. 
+To run the full testing suite, run `rspec` from the command line.
 
 ## Heroku Link
+[Trelora](https://trelora.herokuapp.com/)
 
 
 ## Contributors
