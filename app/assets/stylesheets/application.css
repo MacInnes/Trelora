@@ -1,6 +1,6 @@
 html, body {
   font-family: 'Oxygen', sans-serif;
-  background: linear-gradient(white, #b7da79);
+  background: linear-gradient(white, #eaf3d8);
   height: 100%;
   width: 100%;
 }
@@ -60,6 +60,7 @@ li {
 
 .address-window {
   overflow-y: auto;
+  padding-bottom: 2rem;
 }
 
 .logo {
